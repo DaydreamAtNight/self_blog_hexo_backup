@@ -1,0 +1,40 @@
+<!--add copyright statement https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+<%
+  var sUrl = url.replace(/index\.html$/, '');
+  sUrl = /^(http:|https:)\/\//.test(sUrl) ? sUrl : 'https:' + sUrl;
+%>
+
+<!-- #copyright setting：0-close statement; 1-declare statement if declare: true in the article header; 2-always declare the copyright -->
+<% if ((theme.declare.declare_type === 2 || (theme.declare.declare_type === 1 && post.declare)) && !index){ %>
+  <div class="declare">
+    <strong class="author">author: </strong>
+    <% if(config.author != undefined){ %>
+      <%= config.author%>
+    <% }else{%>
+      <font color="red">please add right "author" name in "_config.yml" in the blog root</font>
+    <%}%>
+    <br>
+    <strong class="create-time">posting date: </strong>
+    <%- date(post.date, 'YYYY-MM-DD HH:MM:SS') %>
+    <br>
+    <strong class="update-time">last update: </strong>
+    <%- date(post.updated, 'YYYY-MM-DD HH:MM:SS') %>
+    <br>
+    <strong class="article-titles">article title: </strong>
+    <a href="<%= config.url %>/<%= post.path %>" title="<%= post.title %>" target="_blank"><%= post.title %></a>
+    <br>
+    <strong class="article-url">article link: </strong>
+    <a href="<%= config.url %>/<%= post.path %>" title="<%= post.title %>" target="_blank"><%= config.url %>/<%= post.path %></a>
+    <br>
+    <strong class="copyright">copyright:</strong>
+    This work is licensed under a
+    <a rel="license" href="<%= theme.declare.licensee_url%>" title="<%= theme.declare.licensee_alias %>"><%= theme.declare.licensee_name%></a>
+    licience 
+    <% if(theme.declare.licensee_img != undefined){ %>
+      <a rel="license" href="<%= theme.declare.licensee_url%>"><img alt="知识共享许可协议" style="border-width:0" src="<%= theme.declare.licensee_img%>"/></a>
+    <% } %>
+  </div>
+<% } else {%>
+  <div class="declare" hidden="hidden"></div>
+<% } %>
+<!-- add copyright statement -->
