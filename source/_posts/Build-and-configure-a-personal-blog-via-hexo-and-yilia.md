@@ -27,7 +27,7 @@ tags:
 
 there are 2 types of mainstream personal blog: static and dynamic.
 
-Static is recommanded considering its simplicity, 0 maintainance and 0 safety worry. 
+Static is recommended considering its simplicity, 0 maintenance and 0 safety worry. 
 
 |              | Static blog                                                  | Dynamic blog                                                 |
 | :----------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
@@ -44,11 +44,11 @@ And I also chose static because I'm geeky (poor of money) and results-driven (la
 
 ### Set environment
 
-1.check machine infomation: macOS on M1 macbook
+1.check machine information: macOS on M1 MacBook
 
 2.Install Nodejs, including node and npm
 
-open  https://nodejs.org/en/download/ and clike download
+open  https://nodejs.org/en/download/ and click download
 
 <img src="node js install.png" alt="node js install" style="zoom:50%;" />
 
@@ -67,7 +67,7 @@ v16.14.0
 git version 2.32.0 (Apple Git-132)
 ```
 
-### Initializie blog
+### Initialize blog
 
 1.install hexo via npm
 
@@ -128,7 +128,7 @@ INFO  Validating config
 INFO  Created: ~/Documents/self_blog/source/_posts/Hello-ShouRou.md
 ```
 
-the blog can be written on any editor, typro in use.
+the blog can be written on any editor, Typora in use.
 
 ```shell
 open ~/Documents/self_blog/source/_posts/Hello-ShouRou.md
@@ -175,7 +175,7 @@ INFO  Generated: 2022/02/22/Hello-ShouRou/index.html
 INFO  18 files generated in 161 ms
 ```
 
-### Deploy to remote (github)
+### Deploy to remote (GitHub)
 
 1.Create a new repository with the name of $username.github.io
 
@@ -189,7 +189,7 @@ use default setting
 $ npm install --save hexo-deployer-git
 ```
 
-3.Open the `_config.yml` file in the blog `root` directroy, add these lines afterwards
+3.Open the `_config.yml` file in the blog `root` directory, add these lines afterwards
 
 ```yml
 deploy:
@@ -210,7 +210,7 @@ Open https://daydreamatnight.github.io/ to see if it works
 
 ## Change theme to yilia
 
-default theme of hexo is called landscape and it's not beatiful enough to most of the people. Yilia is a fast, simple, elegent and popular theme. Thought it has not been updated since Nov 2017, it still a good choice for fresh bloggers.
+default theme of hexo is called landscape and it's not beautiful enough to most of the people. Yilia is a fast, simple, elegant and popular theme. Thought it has not been updated since Nov 2017, it still a good choice for fresh bloggers.
 
 ### Download and deploy yilia
 
@@ -236,7 +236,7 @@ $ hexo d
 
 ### Basic customize yillia
 
-#### Activte `aboutme` ‘left slider’ button
+#### Activate `aboutme` ‘left slider’ button
 
 1.go to terminal run
 
@@ -269,9 +269,9 @@ jsonContent:
 
 #### Customize avatar
 
-put the avatar img in directory  `themes/yilia/source/img`
+put the avatar file in directory  `themes/yilia/source/img`
 
-> do not add to the public repository directl, or the img get cleaned every time running `hexo clean` , need to upload to the same dir again after this command.
+> do not add to the public repository directly, or the img get cleaned every time running `hexo clean` , need to upload to the same dir again after this command.
 
 #### Set favicon (icon on the tab of website)
 
@@ -430,7 +430,7 @@ Stop reporting by clear the contents in `themes/yilia/source-src/js/report.js`
 
 Simply insert `<! -- more -->` to show only what comes before it while collapse the afterwards,  click on the article title to read it in full.
 
-### Easilly add pics to blogs via hexo-renderer-marked plugin
+### Easily add pics to blogs via hexo-renderer-marked plugin
 
 1.find `post_asset_folder ` in `_config.yml` file in the blog `root` directory, set to be true
 
@@ -463,7 +463,7 @@ img can drag into typro, yet blogname need to be deleted before deploying
 
 ### Show number of articles and words on the left panel
 
-1.add wordount plugin in terminal
+1.add wordcount plugin in terminal
 
 ```shell
 npm i --save hexo-wordcount
@@ -533,9 +533,108 @@ busuanzi:
   enable: true
 ```
 
-### Beatiful contents navigation in articles
+### Add button of hiding the left panel
 
-Default navigator is kinda ugly so found a more beatiful version, to use default version, simply change `toc: 2` in file `themes/yilia/_config.yml`
+Refer to  [hexo yilia主题添加隐藏左边栏目按钮](https://cqh-i.github.io/2019/08/07/hexo-yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E9%9A%90%E8%97%8F%E5%B7%A6%E8%BE%B9%E6%A0%8F%E7%9B%AE%E6%8C%89%E9%92%AE/ )  
+
+1.add style list to file ` /themes/yilia/source/main.0cf68a.css `
+
+```css
+/*stylesheet for hide the left panel*/
+.mymenucontainer {
+	display:block;
+	cursor:pointer;
+	left:0;
+	top:0;
+	width:35px;
+	height:35px;
+	z-index:9999;
+	position:fixed;
+}
+.bar1 {
+	width:35px;
+	height:3px;
+	border-radius:3px;
+	background-color:#8E6D51;
+	margin:6px 0;
+	transition:0.1s;
+	-webkit-transform:rotate(-45deg) translate(-8px,8px);
+	transform:rotate(-45deg) translate(-8px,8px);
+}
+.bar2 {
+	width:35px;
+	height:3px;
+	border-radius:3px;
+	background-color:#8E6D51;
+	margin:6px 0;
+	transition:0.1s;
+	opacity:0;
+}
+.bar3 {
+	width:35px;
+	height:3px;
+	border-radius:3px;
+	background-color:#8E6D51;
+	margin:6px 0;
+	transition:0.1s;
+	-webkit-transform:rotate(45deg) translate(-4px,-6px);
+	transform:rotate(45deg) translate(-4px,-6px);
+}
+.change .bar1 {
+	-webkit-transform:rotate(0deg) translate(0px,0px);
+	transform:rotate(0deg) translate(0px,0px);
+}
+.change .bar2 {
+	opacity:1;
+}
+.change .bar3 {
+	-webkit-transform:rotate(0deg) translate(0px,0px);
+	transform:rotate(0deg) translate(0px,0px);
+}
+/*stylesheet for hide the left panel end*/
+```
+
+2.go to ` /themes/yilia/layout/layout.ejs ` add before `  <div class="left-col"  ` 
+
+```html
+<div class="mymenucontainer" onclick="myFunction(this)">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+</div>
+```
+
+3.add between ` </body> ` and ` </html> ` 
+
+```js
+<script>
+    var hide = false;
+    function myFunction(x) {
+        x.classList.toggle("change");
+        if(hide == false){
+            $(".left-col").css('display', 'none');
+            $(".mid-col").css("left", 6);
+            $(".tools-col").css('display', 'none');
+            $(".tools-col.hide").css('display', 'none');
+            hide = true;
+        }else{
+            $(".left-col").css('display', '');
+            $(".mid-col").css("left", 300);
+            $(".tools-col").css('display', '');
+            $(".tools-col.hide").css('display', '');
+            hide = false;
+        }
+    }
+</script>
+```
+
+
+
+
+
+### Beautiful contents navigation in articles
+
+Default navigator is kind of ugly so found a more beautiful version, to use default version, simply change `toc: 2` in file `themes/yilia/_config.yml`
 
 1.add this block at the end of `themes/yilia/source/main.0cf68a.css`
 
@@ -724,7 +823,7 @@ $(".highlight").wrap("<div class='code-wrapper' style='position:relative'></div>
 
 ### Allow search engines to index this Blog
 
-#### index Google to this Blog (not working yet)
+#### index Google to this Blog
 
 check if google can find you, enter `site:daydreamatnight.github.io` to see
 
@@ -799,6 +898,40 @@ Sitemap: https://daydreamatnight.github.io/baidusitemap.xml
 ```
 
 deploy the blog and wait.
+
+##### check if sitemap is available
+
+After uploaded several updates, my sitemap still didn't fetched by google. So I went to check, it turns out my url setting in `_config.yml` is wrong.  So I changed it to be my home url. And check it with  [URL Inspection Tool](https://www.jcchouinard.com/url-inspection-tool/). 
+
+1.Open [google search console](https://search.google.com/search-console), add the url of sitemap in the upper url inspecting box.
+
+<img src="Google%20sitemap%20inspect.png" alt="Google sitemap inspect URL is not on Google " style="zoom:22%;" />
+
+<img src="Google%20sitemap%20inspect%202.png" alt="Google sitemap inspect 2" style="zoom:22%;" />
+
+It's normal it shows `URL is not on Google` because it shouldn't as a sitemap.
+
+2.click `live test` to check the availability.
+
+<img src="Google%20sitemap%20inspect%203.png" alt="Google sitemap inspect 3" style="zoom:75%;" />
+
+It should be available, then just wait.
+
+#### index Bing to this Blog
+
+1.go to [Bing webmaster](https://www.bing.com/webmasters/) and login
+
+2.connect with google webmaster.
+
+<img src="bing%20sitemap.png" alt="bing sitemap" style="zoom:75%;" />
+
+  
+
+<img src="being%20sitemap%20connect%20google.png" alt="being sitemap connect google" style="zoom:75%;" />
+
+  
+
+<img src="bing%20search%20console%20success.png" alt="bing search console success" style="zoom:75%;" />
 
 #### index baidu to this Blog(not possibly working)
 
@@ -916,3 +1049,7 @@ https://hilyy.xyz/how-to-allow-google-to-index-your-hexo-blog-website-google-sea
 https://busuanzi.ibruce.info/
 
 https://creativecommons.org/choose/results-one?license_code=by-nc-sa&amp;jurisdiction=&amp;version=4.0&amp;lang=en
+
+https://www.jcchouinard.com/sitemap-could-not-be-read-couldnt-fetch-in-google-search-console/
+
+https://cqh-i.github.io/2019/08/07/hexo-yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E9%9A%90%E8%97%8F%E5%B7%A6%E8%BE%B9%E6%A0%8F%E7%9B%AE%E6%8C%89%E9%92%AE/

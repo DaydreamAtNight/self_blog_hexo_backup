@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://daydreamatnight.github.io/2022/02/22/Build-and-configure-a-personal-blog-via-hexo-and-yilia/</loc>
+    
+    <lastmod>2022-03-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://daydreamatnight.github.io/2022/02/22/Hello-ShouRou/</loc>
     
     <lastmod>2022-03-01</lastmod>
@@ -12,15 +21,6 @@
   
   <url>
     <loc>https://daydreamatnight.github.io/2022/02/28/install-d2l-moudule-on-apple-m1-chip-for-deep-learning/</loc>
-    
-    <lastmod>2022-03-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://daydreamatnight.github.io/2022/02/22/Build-and-configure-a-personal-blog-via-hexo-and-yilia/</loc>
     
     <lastmod>2022-03-01</lastmod>
     
