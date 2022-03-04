@@ -10,9 +10,9 @@ tags:
   - d2l
 ---
 
-> [d2l](https://pypi.org/project/d2l/) is a small python module wheel that needed when read the useful deep learning book "[dive into deeplearning](https://d2l.ai/)", which provide interactive code examples implimented with [MXNet](https://mxnet.apache.org/versions/1.9.0/), PyTorch, and Tensorflow. 
+> [d2l](https://pypi.org/project/d2l/) is a small python module wheel that needed when read the useful deep learning book "[dive into deeplearning](https://d2l.ai/)", which provide interactive code examples implemented with [MXNet](https://mxnet.apache.org/versions/1.9.0/), PyTorch, and Tensorflow. 
 >
-> But it took me ton's of time installing this module on the new M1 Macbook Air. Actually its easy, just to record this.
+> But it took me ton's of time installing this module on the new M1 MacBook Air. Actually its easy, just to record this.
 
 <!-- more -->
 
@@ -22,7 +22,7 @@ tags:
 
 already did, easy.
 
-2.create a new enviroment with python=3.8
+2.create a new environment with python=3.8
 
 m1 Mac officially support python>=3.9, but 3.8 can be installed.
 
