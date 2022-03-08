@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://daydreamatnight.github.io/2022/03/08/learning-rate-schedule/</loc>
+    
+    <lastmod>2022-03-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://daydreamatnight.github.io/2022/03/04/Intro-and-Pytorch-Implementation-of-Label-Smoothing-Regularization-LSR/</loc>
     
     <lastmod>2022-03-04</lastmod>
@@ -40,7 +49,7 @@
 
   <url>
     <loc>https://daydreamatnight.github.io/</loc>
-    <lastmod>2022-03-04</lastmod>
+    <lastmod>2022-03-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -48,56 +57,56 @@
   
   <url>
     <loc>https://daydreamatnight.github.io/tags/First-Blog/</loc>
-    <lastmod>2022-03-04</lastmod>
+    <lastmod>2022-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://daydreamatnight.github.io/tags/learn/</loc>
-    <lastmod>2022-03-04</lastmod>
+    <lastmod>2022-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://daydreamatnight.github.io/tags/hexo/</loc>
-    <lastmod>2022-03-04</lastmod>
+    <lastmod>2022-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://daydreamatnight.github.io/tags/git/</loc>
-    <lastmod>2022-03-04</lastmod>
+    <lastmod>2022-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://daydreamatnight.github.io/tags/m1-mac/</loc>
-    <lastmod>2022-03-04</lastmod>
+    <lastmod>2022-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://daydreamatnight.github.io/tags/deep-learning/</loc>
-    <lastmod>2022-03-04</lastmod>
+    <lastmod>2022-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://daydreamatnight.github.io/tags/d2l/</loc>
-    <lastmod>2022-03-04</lastmod>
+    <lastmod>2022-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://daydreamatnight.github.io/tags/deep-learning-tricks/</loc>
-    <lastmod>2022-03-04</lastmod>
+    <lastmod>2022-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
