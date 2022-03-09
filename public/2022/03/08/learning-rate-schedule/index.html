@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://daydreamatnight.github.io/2022/03/08/learning-rate-schedule/cyclic%20learning%20rate%20schedule.png">
 <meta property="og:image" content="https://daydreamatnight.github.io/2022/03/08/learning-rate-schedule/warmup%20on%20large%20batches.png">
 <meta property="article:published_time" content="2022-03-08T01:32:32.000Z">
-<meta property="article:modified_time" content="2022-03-08T09:28:43.866Z">
+<meta property="article:modified_time" content="2022-03-08T18:44:58.244Z">
 <meta property="article:author" content="Ryan LI">
 <meta property="article:tag" content="deep learning">
 <meta property="article:tag" content="deep learning tricks">
@@ -197,7 +197,7 @@
       <div id="toc-article" class="toc-article">
           <span id="toc-close" class="toc-close" title="hide navigator" onclick="showBtn();">×</span>
           <strong class="toc-title">navigator</strong>
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Introduction"><span class="toc-number">1.</span> <span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Methods-of-learning-rate-scheduling"><span class="toc-number">2.</span> <span class="toc-text">Methods of learning rate scheduling</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#learning-rate-decay"><span class="toc-number">2.1.</span> <span class="toc-text">learning rate decay</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#learning-rate-decay-with-restart"><span class="toc-number">2.2.</span> <span class="toc-text">learning rate decay with restart</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#learning-rate-warmup"><span class="toc-number">2.3.</span> <span class="toc-text">learning rate warmup</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Reducing-the-learning-rate-on-plateau"><span class="toc-number">2.4.</span> <span class="toc-text">Reducing the learning rate on plateau</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Apply-lr-scheduling-in-PyTorch"><span class="toc-number">3.</span> <span class="toc-text">Apply lr scheduling in PyTorch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Should-we-do-scheduling-with-adaptive-learning-rate-method"><span class="toc-number">4.</span> <span class="toc-text">Should we do scheduling with adaptive learning rate method?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Experiment-adam-vs-adam-cosine-annel"><span class="toc-number">5.</span> <span class="toc-text">Experiment: adam vs adam + cosine annel</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Reference"><span class="toc-number">6.</span> <span class="toc-text">Reference</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Introduction"><span class="toc-number">1.</span> <span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Methods-of-learning-rate-scheduling"><span class="toc-number">2.</span> <span class="toc-text">Methods of learning rate scheduling</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#learning-rate-decay"><span class="toc-number">2.1.</span> <span class="toc-text">learning rate decay</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#learning-rate-decay-with-restart"><span class="toc-number">2.2.</span> <span class="toc-text">learning rate decay with restart</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#learning-rate-warmup"><span class="toc-number">2.3.</span> <span class="toc-text">learning rate warmup</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Reducing-the-learning-rate-on-plateau"><span class="toc-number">2.4.</span> <span class="toc-text">Reducing the learning rate on plateau</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Apply-learning-rate-scheduling-in-PyTorch"><span class="toc-number">3.</span> <span class="toc-text">Apply learning rate scheduling in PyTorch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Should-we-do-scheduling-with-adaptive-learning-rate-method"><span class="toc-number">4.</span> <span class="toc-text">Should we do scheduling with adaptive learning rate method?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Experiment-adam-vs-adam-cosine-annel"><span class="toc-number">5.</span> <span class="toc-text">Experiment: adam vs adam + cosine annel</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Reference"><span class="toc-number">6.</span> <span class="toc-text">Reference</span></a></li></ol>
           </div>
     <script type="text/javascript">
       function showToc(){
@@ -217,7 +217,7 @@
     <!-- navigator end -->
     <!--
     <div align="center" class="post-count">
-        字数：1.3k字 | 预计阅读时长：7分钟
+        字数：1.3k字 | 预计阅读时长：8分钟
     </div>
     -->
     <div class="article-entry" itemprop="articleBody">
@@ -262,13 +262,13 @@
 <blockquote>
 <p>As we discussed, for large minibatches (e.g., 8k) the linear scaling rule breaks down when the network is changing rapidly, which commonly occurs in early stages of training. We find that this issue can be alleviated by a properly designed warmup [16], namely, a strategy of using less aggressive learning rates at the start of training. </p>
 </blockquote>
-<img src="warmup%20on%20large%20batches.png" alt="warmup on large batches" style="zoom:80%;" />
+<img src="warmup%20on%20large%20batches.png" alt="warmup on large batches" style="zoom:100%;" />
 
 <p>In practice, warmup are always combined with other learning rate methods afterwards. And linear warmup is a default method.</p>
 <h4 id="Reducing-the-learning-rate-on-plateau"><a href="#Reducing-the-learning-rate-on-plateau" class="headerlink" title="Reducing the learning rate on plateau"></a>Reducing the learning rate on plateau</h4><p>Apart from methods scheduling the learning rate with epoch, a dynamic learning rate decay method is also a choice. It refers to the process of decaying the learning rate only when the optimizer can’t lift the accuracy, or decrease the loss in serval epochs.</p>
 </li>
 </ul>
-<h3 id="Apply-lr-scheduling-in-PyTorch"><a href="#Apply-lr-scheduling-in-PyTorch" class="headerlink" title="Apply lr scheduling in PyTorch"></a>Apply lr scheduling in PyTorch</h3><blockquote>
+<h3 id="Apply-learning-rate-scheduling-in-PyTorch"><a href="#Apply-learning-rate-scheduling-in-PyTorch" class="headerlink" title="Apply learning rate scheduling in PyTorch"></a>Apply learning rate scheduling in PyTorch</h3><blockquote>
 <p><code>torch.optim.lr_scheduler</code> provides several methods to adjust the learning rate based on the number of epochs. </p>
 </blockquote>
 <p>For example, </p>
@@ -290,16 +290,16 @@
 <p>Adam can substantially benefit from a scheduled learning rate multiplier. The fact that Adam is an adaptive gradient algorithm and as such adapts the learning rate for each parameter does not rule out the possibility to substantially improve its performance by using a global learning rate multiplier, scheduled, e.g., by cosine annealing.  </p>
 </blockquote>
 <p>All in all, theoretically, the adaptive learning rate methods such as adam adjust the learning rate for each parameters under a upper limit as the global learning rate, which can be adjusted by scheduling. In practice, it really depends. And if adamW is in use, just do what the article above encouraged.</p>
-<h3 id="Experiment-adam-vs-adam-cosine-annel"><a href="#Experiment-adam-vs-adam-cosine-annel" class="headerlink" title="Experiment: adam vs adam + cosine annel"></a>Experiment: adam vs adam + cosine annel</h3><h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1412.6980.pdf">Adam: A Method for Stochastic Optimization</a></p>
-<p>[Adaptive Learning Rate Method - TUM Wiki-System](<a target="_blank" rel="noopener" href="https://wiki.tum.de/display/lfdv/Adaptive+Learning+Rate+Method#:~:text=Adaptive">https://wiki.tum.de/display/lfdv/Adaptive+Learning+Rate+Method#:~:text=Adaptive</a> learning rate methods are,the parameters of the network.) </p>
+<h3 id="Experiment-adam-vs-adam-cosine-annel"><a href="#Experiment-adam-vs-adam-cosine-annel" class="headerlink" title="Experiment: adam vs adam + cosine annel"></a>Experiment: adam vs adam + cosine annel</h3><h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1412.6980.pdf">Kingma, D. P., &amp; Ba, J. (2014). Adam: A method for stochastic optimization. <em>arXiv preprint arXiv:1412.6980</em>.</a></p>
+<p><a target="_blank" rel="noopener" href="https://wiki.tum.de/display/lfdv/Adaptive+Learning+Rate+Method">Adaptive Learning Rate Method</a> </p>
 <p><a target="_blank" rel="noopener" href="https://towardsdatascience.com/learning-rate-schedules-and-adaptive-learning-rate-methods-for-deep-learning-2c8f433990d1">Learning Rate Schedules and Adaptive Learning Rate Methods</a> </p>
-<p>[Learning Rate Decay and methods in Deep Learning](<a target="_blank" rel="noopener" href="https://medium.com/analytics-vidhya/learning-rate-decay-and-methods-in-deep-learning-2cee564f910b#:~:text=Learning">https://medium.com/analytics-vidhya/learning-rate-decay-and-methods-in-deep-learning-2cee564f910b#:~:text=Learning</a> rate decay is a,help both optimization and generalization.) </p>
+<p><a target="_blank" rel="noopener" href="https://medium.com/analytics-vidhya/learning-rate-decay-and-methods-in-deep-learning-2cee564f910b#:~:text=Learning%20rate%20decay%20is%20a,help%20both%20optimization%20and%20generalization.">Learning Rate Decay and methods in Deep Learning</a> </p>
 <p><a target="_blank" rel="noopener" href="https://towardsdatascience.com/https-medium-com-reina-wang-tw-stochastic-gradient-descent-with-restarts-5f511975163">A Newbie’s Guide to Stochastic Gradient Descent With Restarts</a></p>
-<p><a target="_blank" rel="noopener" href="https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf">Deep Residual Learning for Image Recognition</a> </p>
-<p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1706.02677.pdf">Acurate, Large Minibatch SGD: Training ImageNet in 1 Hour</a></p>
+<p><a target="_blank" rel="noopener" href="https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf">He, K., Zhang, X., Ren, S., &amp; Sun, J. (2016). Deep residual learning for image recognition. In <em>Proceedings of the IEEE conference on computer vision and pattern recognition</em> (pp. 770-778).</a> </p>
+<p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1706.0267">Goyal, P., Dollár, P., Girshick, R., Noordhuis, P., Wesolowski, L., Kyrola, A., … &amp; He, K. (2017). Accurate, large minibatch sgd: Training imagenet in 1 hour. <em>arXiv preprint arXiv:1706.02677</em>.</a></p>
 <p><a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/optim.html">torch.optim — PyTorch 1.10 documentation</a> </p>
 <p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/39517431/should-we-do-learning-rate-decay-for-adam-optimizer">Should we do learning rate decay for adam optimizer</a></p>
-<p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1711.05101">Decoupled weight decay regularization</a></p>
+<p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1711.05101">Loshchilov, I., &amp; Hutter, F. (2017). Decoupled weight decay regularization. <em>arXiv preprint arXiv:1711.05101</em>.</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.kaggle.com/isbhargav/guide-to-pytorch-learning-rate-scheduling">Guide to Pytorch Learning Rate Scheduling</a></p>
 
       
@@ -320,7 +320,7 @@
     2022-03-08 09:03:00
     <br>
     <strong class="update-time">last update: </strong>
-    2022-03-08 17:03:86
+    2022-03-09 02:03:24
     <br>
     <strong class="article-titles">article title: </strong>
     <a href="https://daydreamatnight.github.io/2022/03/08/learning-rate-schedule/" title="learning rate schedule" target="_blank">learning rate schedule</a>

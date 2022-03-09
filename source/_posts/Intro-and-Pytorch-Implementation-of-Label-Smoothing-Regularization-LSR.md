@@ -208,10 +208,11 @@ Bad things about label smoothing:
 
  [大道至简：算法工程师炼丹Trick手册 (qq.com)](https://mp.weixin.qq.com/s?__biz=Mzg4MzU1NjQ2Mw==&mid=2247495228&idx=1&sn=ec685adcf8a274e8235c177718868a34&scene=21#wechat_redirect) 
 
-https://cloud.tencent.com/developer/article/1684298?from=article.detail.1815786
+[深度学习trick--labelsmooth](https://cloud.tencent.com/developer/article/1684298?from=article.detail.1815786)
 
  [Label Smoothing 标签平滑 (Label smooth regularization, LSR)_hxxjxw的博客-CSDN博客](https://blog.csdn.net/hxxjxw/article/details/115298103) 
 
- [When Does Label Smoothing Help?. In late 2015, a team at Google came up… | by Aakash Nain | Medium](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326#:~:text=Label smoothing%2C in a nutshell%2C is a way,as a function of activations in penultimate layer) 
+ [When Does Label Smoothing Help?](https://medium.com/@nainaakash012/when-does-label-smoothing-help-89654ec75326)
 
- https://gist.github.com/suvojit-0x55aa/0afb3eefbb26d33f54e1fb9f94d6b609
+[ suvojit-0x55aa](https://gist.github.com/suvojit-0x55aa)/[label_smoothing.py](https://gist.github.com/suvojit-0x55aa/0afb3eefbb26d33f54e1fb9f94d6b609)
+

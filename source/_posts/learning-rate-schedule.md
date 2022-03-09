@@ -67,7 +67,7 @@ Apart from the constant learning rate there are several way to schedule the lear
   
   > As we discussed, for large minibatches (e.g., 8k) the linear scaling rule breaks down when the network is changing rapidly, which commonly occurs in early stages of training. We find that this issue can be alleviated by a properly designed warmup [16], namely, a strategy of using less aggressive learning rates at the start of training. 
   
-  <img src="warmup%20on%20large%20batches.png" alt="warmup on large batches" style="zoom:80%;" />
+  <img src="warmup%20on%20large%20batches.png" alt="warmup on large batches" style="zoom:100%;" />
   
   In practice, warmup are always combined with other learning rate methods afterwards. And linear warmup is a default method.
   
@@ -75,7 +75,7 @@ Apart from the constant learning rate there are several way to schedule the lear
   
   Apart from methods scheduling the learning rate with epoch, a dynamic learning rate decay method is also a choice. It refers to the process of decaying the learning rate only when the optimizer can't lift the accuracy, or decrease the loss in serval epochs. 
   
-### Apply lr scheduling in PyTorch
+### Apply learning rate scheduling in PyTorch
 
 > `torch.optim.lr_scheduler` provides several methods to adjust the learning rate based on the number of epochs. 
 
@@ -146,24 +146,24 @@ All in all, theoretically, the adaptive learning rate methods such as adam adjus
 
 ### Reference
 
-[Adam: A Method for Stochastic Optimization](https://arxiv.org/pdf/1412.6980.pdf)
+[Kingma, D. P., & Ba, J. (2014). Adam: A method for stochastic optimization. *arXiv preprint arXiv:1412.6980*.](https://arxiv.org/pdf/1412.6980.pdf)
 
-[Adaptive Learning Rate Method - TUM Wiki-System](https://wiki.tum.de/display/lfdv/Adaptive+Learning+Rate+Method#:~:text=Adaptive learning rate methods are,the parameters of the network.) 
+[Adaptive Learning Rate Method](https://wiki.tum.de/display/lfdv/Adaptive+Learning+Rate+Method) 
 
 [Learning Rate Schedules and Adaptive Learning Rate Methods](https://towardsdatascience.com/learning-rate-schedules-and-adaptive-learning-rate-methods-for-deep-learning-2c8f433990d1) 
 
-[Learning Rate Decay and methods in Deep Learning](https://medium.com/analytics-vidhya/learning-rate-decay-and-methods-in-deep-learning-2cee564f910b#:~:text=Learning rate decay is a,help both optimization and generalization.) 
+[Learning Rate Decay and methods in Deep Learning](https://medium.com/analytics-vidhya/learning-rate-decay-and-methods-in-deep-learning-2cee564f910b#:~:text=Learning%20rate%20decay%20is%20a,help%20both%20optimization%20and%20generalization.) 
 
 [A Newbie’s Guide to Stochastic Gradient Descent With Restarts](https://towardsdatascience.com/https-medium-com-reina-wang-tw-stochastic-gradient-descent-with-restarts-5f511975163)
 
-[Deep Residual Learning for Image Recognition](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf) 
+[He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep residual learning for image recognition. In *Proceedings of the IEEE conference on computer vision and pattern recognition* (pp. 770-778).](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf) 
 
-[Acurate, Large Minibatch SGD: Training ImageNet in 1 Hour](https://arxiv.org/pdf/1706.02677.pdf)
+[Goyal, P., Dollár, P., Girshick, R., Noordhuis, P., Wesolowski, L., Kyrola, A., ... & He, K. (2017). Accurate, large minibatch sgd: Training imagenet in 1 hour. *arXiv preprint arXiv:1706.02677*.](https://arxiv.org/abs/1706.0267)
 
 [torch.optim — PyTorch 1.10 documentation](https://pytorch.org/docs/stable/optim.html) 
 
 [Should we do learning rate decay for adam optimizer](https://stackoverflow.com/questions/39517431/should-we-do-learning-rate-decay-for-adam-optimizer)
 
-[Decoupled weight decay regularization](https://arxiv.org/abs/1711.05101)
+[Loshchilov, I., & Hutter, F. (2017). Decoupled weight decay regularization. *arXiv preprint arXiv:1711.05101*.](https://arxiv.org/abs/1711.05101)
 
 [Guide to Pytorch Learning Rate Scheduling](https://www.kaggle.com/isbhargav/guide-to-pytorch-learning-rate-scheduling)
