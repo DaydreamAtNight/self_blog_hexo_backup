@@ -13,6 +13,8 @@ tags:
 
 > It has been 10 years since AlexNet has been brought out. It is one of the cornerstones of this surge of deep learning.
 
+<!-- more -->
+
 paper link: [ImageNet Classification with Deep Convolutional Neural Networks](https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html)
 
 useful link: https://www.bilibili.com/video/BV1ih411J7Kz
