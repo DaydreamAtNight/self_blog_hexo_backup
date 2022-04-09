@@ -108,6 +108,10 @@ In practice, warmup are always combined with other learning rate methods afterwa
 
 Apart from methods scheduling the learning rate with epoch, a dynamic learning rate decay method is also an option. It denotes the process of decaying the learning rate only when the optimizer fails to improve the accuracy or decrease the loss in serval epochs. 
 
+For example, in [AlexNet](https://proceedings.neurips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html), 
+
+> The heuristic which we followed was to divide the learning rate by 10 when the validation error rate stopped improving with the current learning rate. The learning rate was initialized at 0.01 and reduced three times prior to termination.
+
 ### Apply learning rate scheduling in PyTorch
 
 > `torch.optim.lr_scheduler` provides several methods to adjust the learning rate based on the number of epochs. 
@@ -223,6 +227,8 @@ In the second and  sub-figure, the fluctuation in the process of gradient descen
 [He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep residual learning for image recognition. In *Proceedings of the IEEE conference on computer vision and pattern recognition* (pp. 770-778).](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf) 
 
 [Goyal, P., Dollár, P., Girshick, R., Noordhuis, P., Wesolowski, L., Kyrola, A., ... & He, K. (2017). Accurate, large minibatch sgd: Training imagenet in 1 hour. *arXiv preprint arXiv:1706.02677*.](https://arxiv.org/abs/1706.0267)
+
+[Krizhevsky, A., Sutskever, I., & Hinton, G. E. (2012). Imagenet classification with deep convolutional neural networks. *Advances in neural information processing systems*, *25*.](https://proceedings.neurips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html)
 
 [torch.optim — PyTorch 1.10 documentation](https://pytorch.org/docs/stable/optim.html) 
 
