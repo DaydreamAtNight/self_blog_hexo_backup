@@ -92,7 +92,7 @@ Still there are several choices, but Cosine Cyclical and Cosine Annealing with W
 
   #### learning rate warmup
 
-Learning rate warmup is first applied in the famous [Resnet](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf) paper
+Learning rate warmup is first applied in the famous [Resnet](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf) paper in one of its experiments.
 
   > In this case, we find that the initial learning rate of 0.1 is slightly too large to start converging5 . So we use 0.01 to warm up the training until the training error is below 80% (about 400 iterations), and then go back to 0.1 and continue training.  
 
@@ -111,6 +111,12 @@ Apart from methods scheduling the learning rate with epoch, a dynamic learning r
 For example, in [AlexNet](https://proceedings.neurips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html), 
 
 > The heuristic which we followed was to divide the learning rate by 10 when the validation error rate stopped improving with the current learning rate. The learning rate was initialized at 0.01 and reduced three times prior to termination.
+
+In  [Resnet](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf) after the warm-up,
+
+> The learning rate starts from 0.1 and is divided by 10 when the error plateaus
+
+
 
 ### Apply learning rate scheduling in PyTorch
 

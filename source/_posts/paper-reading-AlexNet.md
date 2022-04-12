@@ -53,7 +53,7 @@ Before AlexNet, it was common to warm up the NN with massive unlabelled images b
 
 Actually video sequences are still a tough area beacause of the high computational comsumpution and the copyright issues.
 
-### 6. Key figure
+### Key figure
 
 <img src="alexnet results.png" alt="alexnet results" style="zoom:67%;" />
 
@@ -87,6 +87,12 @@ From a present point of view, ReLU is not that important for speeding up the tra
 
 A metaphore of overfitting: In order to get a high score on an exam, you memorize all the answers to the exercises instead of understanding the question.
 
+#### 4.1 Data Augmentation
+
+> The second form of data augmentation consists of altering the intensities of the RGB channels in training images. Specifically, we perform PCA on the set of RGB pixel values throughout the ImageNet training set.
+
+PCA is here use as a augmentation method which follow-up work don't follow. For example, in ResNet a standard color augmentation is used with no fancy methods. And nowadays, standard color augmentation wins.
+
 #### 4.2 dropout
 
 > There is, however, a very efficient version of model combination that only costs about a factor of two during training. The recently-introduced technique, called “dropout”
@@ -119,7 +125,7 @@ Interesting problem but less focused by follow up work.
 
 > consider the feature activations induced by an image at the last, 4096-dimensional hidden layer. If two images produce feature activation vectors with a small Euclidean separation, we can say that the higher levels of the neural network consider them to be similar.
 
-This is an intuative work as talked before, and follow up work such as [Visualizing and understanding convolutional networks ](https://link.springer.com/chapter/10.1007/978-3-319-10590-1_53) dig deeper trying to interperate the NN. And interpretion is very important for works related to physics or [fairness](https://ieeexplore.ieee.org/abstract/document/9113719/).
+This is an intuitive work as talked before, and follow up work such as [Visualizing and understanding convolutional networks ](https://link.springer.com/chapter/10.1007/978-3-319-10590-1_53) dig deeper trying to interperate the NN. And interpretion is very important for works related to physics or [fairness](https://ieeexplore.ieee.org/abstract/document/9113719/).
 
 ## Reference
 

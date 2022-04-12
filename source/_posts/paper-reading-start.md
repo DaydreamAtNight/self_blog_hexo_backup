@@ -50,4 +50,6 @@ The method is inspired by [Andrew Ng's lecutre on Stanford](https://youtu.be/733
 
 ## List of papers
 
-alexNet: [ImageNet Classification with Deep Convolutional Neural Networks](https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html)
+[paper reading: AlexNet](https://daydreamatnight.github.io/2022/04/07/paper-reading-AlexNet/)
+
+[paper reading: ResNet](https://daydreamatnight.github.io/2022/04/09/paper-reading-ResNet/)
