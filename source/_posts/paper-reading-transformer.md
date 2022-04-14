@@ -69,15 +69,15 @@ Similarly, after running over the definition of attention mechanism, the 2 modif
 
 Multi-head attention are described.
 
-As we all known, there are two methods (attention scoring functions) of calculating the similarity of query and key(attention weights over the value). One is additive attention. It is complex but allows different length of key (dk) and query (qk). And Additive attention layer includes learnable parameters that can be tuned during training. Another one is dot-product attention, it is simply dot product of the transverse query and key matrix. It requires same length of query and key and no learnable parameters are introduced.
+As we all known, there are two methods (attention scoring functions) of calculating the similarity of query and key(attention weights over the value). One is additive attention. It is complex but allows different length of key (dk) and query (qk). And Additive attention layer includes learnable parameters that can be tuned during training. Another one is dot-product attention, it is simply dot product of the transverse query and key matrix. It requires same length of query and key and no learnable parameters are introduced. 
 
-**scaled dot-product attention **
+**scaled dot-product attention**
 
 It pretty much is the dot-product attention multiply with a scaling factor of 1/√dk. And it is because for large dk, the deviation of the dot-product results might get too large, and the according gradient can get extremely small and hard to train.
 
 But look the figure 2 of the paper, an optional mask node is shown in the computation graph. And the algorithm of mask is not described in detail. Basically when calculating q_t, in the mask node, the attention scores a_t+1 - a_t are substituted to a huge negative so that after softmax, the attention weight is 0 on values v_t+1 to v_n. And it is corresponding to the how the decoder works in the prediction mode.
 
-**multi-head attention **
+**multi-head attention**
 
 How mutli-head works is introducing clearly in the paper:
 
