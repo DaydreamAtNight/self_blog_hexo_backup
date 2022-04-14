@@ -7,7 +7,6 @@ date: 2022-02-28 22:30:11
 tags:
   - m1 mac
   - deep learning
-  - d2l
 ---
 
 > [d2l](https://pypi.org/project/d2l/) is a small python module wheel that needed when read the useful deep learning book "[dive into deeplearning](https://d2l.ai/)", which provide interactive code examples implemented with [MXNet](https://mxnet.apache.org/versions/1.9.0/), PyTorch, and Tensorflow. 
