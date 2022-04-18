@@ -48,6 +48,6 @@ Interestingly, similar weights can be achieved with Graph Attention Networks, wh
 
 ## Reviews
 
-Writing: the whole article is well coherent and fluent, building the knowledge of GNN step by step, from a highly simplified model to the real GNN. The beautiful interactive figures make the article easy to read. Yet lacking mathematics and codes is both pros and cons. Unfortunately, *tarting today Distill will be taking a one year hiatus, which may be extended indefinitely.* 
+Writing: the whole article is well coherent and fluent, building the knowledge of GNN step by step, from a highly simplified model to the real GNN. The beautiful interactive figures make the article easy to read and digestible. Yet lacking mathematics and codes is both pros and cons. Unfortunately, *tarting today Distill will be taking a one year hiatus, which may be extended indefinitely.* 
 
 Graph neural network: a graph is a powerful tool so that all kinds of data can be described as a graph. But this power leads to a huge difficulty in optimisation. One reason is the sparsity, the dynamic structure makes it difficult the train on CPU or GPU. Another is that GNN is very sensitive to hyper-parameters, just like the experiment section of this blog shows. As such, it is an active research area yet rarely deployed in industry.

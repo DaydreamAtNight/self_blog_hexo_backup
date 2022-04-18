@@ -55,3 +55,6 @@ The method is inspired by [Andrew Ng's lecutre on Stanford](https://youtu.be/733
 [paper reading: ResNet](https://daydreamatnight.github.io/2022/04/09/paper-reading-ResNet/)
 
 [paper reading: transformer](https://daydreamatnight.github.io/2022/04/12/paper-reading-transformer/)
+
+[paper reading: A gentle introduction to graph neural networks](https://daydreamatnight.github.io/2022/04/14/paper-reading-A-gentle-introduction-to-graph-neural-networks/)
+
