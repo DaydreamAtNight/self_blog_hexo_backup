@@ -115,7 +115,11 @@ It is obvious the 4th architecture BiLSTM is from the idea of ELMO. And all the 
 >
 > Created by Dolan et al. at 2005, the Microsoft Research Paraphrase Corpus (MRPC) Dataset contains pairs of sentences which have been extracted from news sources on the web, along with human annotations indicating whether each pair captures a paraphrase/semantic equivalence relationship., in English language. Containing 5,8 in Text file format.
 
-In the Effect of model size part, they claim with a large model size, huge improvement can be reached.  And this leads a trend of increasing the model size in NLP, for example, the 100 billon GPT-3, and 530 billion model Megatron-Turing Natural Language Generation (MT-NLG). The boundary of NLP will be push further.
+
+
+<img src="model size graph.webp" alt="model size graph" style="zoom:50%;" />
+
+In the Effect of model size part, they claim with a large model size, huge improvement can be reached.  And this leads a trend of increasing the model size in NLP, for example, the 100 billon GPT-3, and 500 billion model Megatron-Turing Natural Language Generation (MT-NLG). The boundary of NLP will be push further. 
 
 ## Reviews
 
