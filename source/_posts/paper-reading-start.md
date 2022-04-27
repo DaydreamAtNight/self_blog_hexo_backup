@@ -14,11 +14,31 @@ tags:
 
 <!-- more -->
 
-## How to read a paper
+### 🔝 Mindmap for quick indexing
+
+{% markmap 300px %}
+
+- Classic
+  - Vision
+    - [AlexNet](https://daydreamatnight.github.io/2022/04/07/paper-reading-AlexNet/)
+    - [ResNet](https://daydreamatnight.github.io/2022/04/09/paper-reading-ResNet/)
+- [Transformer](https://daydreamatnight.github.io/2022/04/12/paper-reading-transformer/)
+  - NLP
+    - [BERT](https://daydreamatnight.github.io/2022/04/15/paper-reading-bert/)
+    - [GPT1-3](https://daydreamatnight.github.io/2022/04/18/paper-reading-GPT1-3/)
+  - Vision
+    - [ViT](https://daydreamatnight.github.io/2022/04/21/paper-reading-Vision-Transformer/)
+      - [MAE](https://daydreamatnight.github.io/2022/04/27/paper-reading-MAE/)
+- Novel 
+  - [ GNN intro](https://daydreamatnight.github.io/2022/04/14/paper-reading-A-gentle-introduction-to-graph-neural-networks/)
+
+{%endmarkmap%}
+
+### How to read a paper
 
 The method is inspired by [Andrew Ng's lecutre on Stanford](https://youtu.be/733m6qBH-jI) and [Mu Li's online lecutre](https://www.bilibili.com/video/BV1H44y1t75x)
 
-### Up to 3 passes for one paper:
+#### Up to 3 passes for one paper:
 
 | Section       | 1st pass          | 2nd pass            | 3rd pass     |
 | ------------- | ----------------- | ------------------- | ------------ |
@@ -35,20 +55,20 @@ The method is inspired by [Andrew Ng's lecutre on Stanford](https://youtu.be/733
 
 **The third pass:** what problem was asked. How to solve this problem. How to apply the experiment. Close the article and recall what each section is about.
 
-### Some rules:  
+#### Some rules:  
 
 - Efficient high informative content first then the harder material 
 - Skip the parts which do not make sense unless trying to do deep research on it
 - The related work part is often unimportant
 
-### Questions that keep in mind:
+#### Questions that keep in mind:
 
 - what the authors try to accomplish
 - what are the key elements of the approach
 - what can you use yourself
 - what other references do you want to follow
 
-## List of papers
+### List of papers
 
 [paper reading: AlexNet](https://daydreamatnight.github.io/2022/04/07/paper-reading-AlexNet/)
 
@@ -63,3 +83,5 @@ The method is inspired by [Andrew Ng's lecutre on Stanford](https://youtu.be/733
 [paper reading: GPT1-3](https://daydreamatnight.github.io/2022/04/18/paper-reading-GPT1-3/)
 
 [paper reading: Vision Transformer](https://daydreamatnight.github.io/2022/04/21/paper-reading-Vision-Transformer/)
+
+[paper reading: MAE](https://daydreamatnight.github.io/2022/04/27/paper-reading-MAE/)

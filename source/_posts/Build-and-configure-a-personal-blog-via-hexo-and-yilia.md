@@ -1029,6 +1029,27 @@ declare:
   licensee_img: https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png
 ```
 
+### Add mind-map support
+
+```shell
+npm install hexo-markmap
+```
+
+Detailed in its [Github](https://github.com/MaxChang3/hexo-markmap)
+
+Example:
+
+```
+{% markmap 300px %}
+- Testa
+  - test1
+  - test2
+- Testb
+  - test1
+  - test2
+{%endmarkmap%}
+```
+
 ## Reference
 
 https://flatironschool.com/blog/the-benefits-of-blogging-how-and-why-to-keep-a-technical-blog/
