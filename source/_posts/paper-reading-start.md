@@ -58,3 +58,8 @@ The method is inspired by [Andrew Ng's lecutre on Stanford](https://youtu.be/733
 
 [paper reading: A gentle introduction to graph neural networks](https://daydreamatnight.github.io/2022/04/14/paper-reading-A-gentle-introduction-to-graph-neural-networks/)
 
+[paper reading: bert](https://daydreamatnight.github.io/2022/04/15/paper-reading-bert/)
+
+[paper reading: GPT1-3](https://daydreamatnight.github.io/2022/04/18/paper-reading-GPT1-3/)
+
+[paper reading: Vision Transformer](https://daydreamatnight.github.io/2022/04/21/paper-reading-Vision-Transformer/)
