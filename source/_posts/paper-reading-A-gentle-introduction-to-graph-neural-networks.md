@@ -7,10 +7,9 @@ tags:
   - paper reading
   - deep learning
 ---
-
-> This is a series of paper reading notes, hopefully, to push me to read paper casually and to leave some record of what I've learned.
-
 > This is a tech blog written by google research team in 2021 that introducing the graph neural network. GNN has gradually become popular in the last 4 years. Personally, I think the graph structure looks similar to the CFD mesh, and there are works  focusing on simulating physics via GNN.
+
+> This is a [series of paper reading notes](https://daydreamatnight.github.io/2022/04/02/paper-reading-start/), hopefully, to push me to read paper casually and to leave some record of what I've learned.
 
 <!-- more -->
 

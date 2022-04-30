@@ -7,12 +7,12 @@ date: 2022-03-04 13:59:58
 tags:
 	- deep learning
 	- deep learning tricks
-
 ---
+
+> Soft label is a commonly used trick to prevent overfitting. It can always gain some extra points on the image classification tasks. In this article, I have put together useful information from theory to implementation of it.
 
 > Recently, I joined a [Kaggle image classification competition](https://www.kaggle.com/c/classify-leaves/), I used the pretrained ResNet50 plus other tricks and here is to record some of them I've learned for now. 
 
-> Soft label is a commonly used trick to prevent overfitting. It can always gain some extra points on the image classification tasks. In this article, I have put together useful information from theory to implementation of it.
 
 <!-- more -->
 

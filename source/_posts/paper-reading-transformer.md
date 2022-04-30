@@ -9,9 +9,9 @@ tags:
   - deep learning
 ---
 
-> This is a series of paper reading notes, hopefully, to push me to read paper casually and to leave some record of what I've learned.
-
 > The transformer is the most important achievement in the last 5 years. It presents the fourth class of deep learning models besides MLP, CNN and RNN. And had a huge impact on the entire deep learning field, be it NLP or CV. Even the way the paper and network are named leads a trend.
+
+> This is a [series of paper reading notes](https://daydreamatnight.github.io/2022/04/02/paper-reading-start/), hopefully, to push me to read paper casually and to leave some record of what I've learned.
 
 <!-- more -->
 

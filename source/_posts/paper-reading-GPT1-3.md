@@ -8,10 +8,9 @@ tags:
   - paper reading
   - deep learning
 ---
-
-> This is a series of paper reading notes, hopefully, to push me to read paper casually and to leave some record of what I've learned.
-
 > GPT-3 is the most popular generative language model now. With more than 100 billion parameters, the performance is proved to be great and by now there are more than hundreds of works (commercial or academic) built on it, including the famous [GitHub Copilot](https://copilot.github.com/).
+
+> This is a [series of paper reading notes](https://daydreamatnight.github.io/2022/04/02/paper-reading-start/), hopefully, to push me to read paper casually and to leave some record of what I've learned.
 
 <!-- more -->
 

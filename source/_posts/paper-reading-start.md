@@ -8,9 +8,9 @@ tags:
   - deep learning
 ---
 
-> This is a start of a series of paper reading notes, hopefully, to push me to read paper casually and to leave some record of what I've learned.
-
 > This is a brief description of the 3-step method of reading a paper. And a reading list.
+
+> This is a [series of paper reading notes](https://daydreamatnight.github.io/2022/04/02/paper-reading-start/), hopefully, to push me to read paper casually and to leave some record of what I've learned.
 
 <!-- more -->
 

@@ -5,7 +5,7 @@ toc: true
 declare: true
 tags: 
   - hexo
-  - git
+  - blog
 ---
 
 > Technical blog has a hundred benefits and no harm
@@ -1100,12 +1100,16 @@ mathjax:
 7.Examples: $this_{is}an\frac{inline}{equation}$
 $$
 \begin{equation}
-    \mathbf{K}=\frac{1}{\Delta r}\left[\begin{matrix}0&\begin{matrix}\cdots&\frac{1}{2}\\\end{matrix}&\begin{matrix}-2&\frac{3}{2}\\\end{matrix}\\\vdots&\begin{matrix}\cdots\ \ \ \ &\vdots\ \ \\\end{matrix}&\begin{matrix}\vdots\ \ \ \ &\vdots\\\end{matrix}\\\end{matrix}\right] ,\ \
-        \mathbf{K}_\mathbf{3}=\frac{1}{2}\ \left[\begin{matrix}\begin{matrix}1\\\begin{matrix}\\\\\end{matrix}\\\end{matrix}&\begin{matrix}1\ &\\\begin{matrix}\ddots\ \\\\\end{matrix}&\begin{matrix}\ddots\\\ \ddots\\\end{matrix}\\\end{matrix}&\begin{matrix}\begin{matrix}&\\\end{matrix}\\\begin{matrix}\begin{matrix}&\\\end{matrix}\\\begin{matrix}\ \ddots&\\\end{matrix}\\\end{matrix}\\\end{matrix}\\&\begin{matrix}&\\\end{matrix}&\begin{matrix}1&1\\\end{matrix}\\&\begin{matrix}&\\\end{matrix}&\begin{matrix}&2\\\end{matrix}\\\end{matrix}\right]
-        \label{K1}
+    \mathbf{K}_\mathbf{1}=\frac{1}{\Delta r}\ \left[\begin{matrix}\begin{matrix}-1&1\\-1&1\\\end{matrix}&\ &\ \\\begin{matrix}\ &\ddots\\\end{matrix}&\begin{matrix}\ddots&\ \\\end{matrix}&\ \\\ &-1\ &1\\\end{matrix}\right],\ \ {\ \mathbf{K}}_\mathbf{2}=\frac{1}{\Delta r}\ \left[\begin{matrix}\begin{matrix}-1&1\\\ &\ddots\\\end{matrix}&\begin{matrix}\\\ddots\\\end{matrix}&\ \\\begin{matrix}\ &\ \\\end{matrix}&-1&1\ \\\ &-1\ &1\\\end{matrix}\right]
+    \label{K2}
 \end{equation}
 $$
 
+### The last snapshot
+
+Ok, never spend time on a no-longer maintained project. Here's the last figure of it.
+
+<img src="Last snapshot.png" alt="Last snapshot" style="zoom:80%;" />
 
 ## Reference
 
