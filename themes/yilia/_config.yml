@@ -42,7 +42,10 @@ root: /
 # 文章卡片右下角常驻链接，不需要请设置为false
 show_all_link: 'show all'
 # 数学公式
-mathjax: false
+mathjax:
+  enable: true
+  per_page: 
+  cdn: //cdn.jsdelivr.net/npm/mathjax%403/es5/tex-mml-chtml.js
 # 是否在新窗口打开链接
 open_in_new: false
 

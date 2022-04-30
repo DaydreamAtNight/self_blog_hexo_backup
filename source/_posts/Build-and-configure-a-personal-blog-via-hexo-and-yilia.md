@@ -7,12 +7,12 @@ tags:
   - hexo
   - git
 ---
-> Keep updating...
-
 
 > Technical blog has a hundred benefits and no harm
 >
 > This blog records the process of building and customizing this personal blog from 0 to 1
+
+> Unfortunately, the yilia theme has been no longer updating and it is too buggy right now. I switch to other theme.
 
 <!-- more -->
 
@@ -1049,6 +1049,63 @@ Example:
   - test2
 {%endmarkmap%}
 ```
+
+### Add Latex math support
+
+Change the renderer to the more powerful pandoc:
+
+1.Install pandoc on macOS:
+
+```
+copybrew install pandoc
+```
+
+2.in the blog root directory uninstall the default renderer then install the pandoc renderer:
+
+```
+copynpm uninstall hexo-renderer-marked --save
+npm install hexo-renderer-pandoc --save
+```
+
+3.install the hexo math plugin
+
+```
+copynpm install hexo-math --save
+```
+
+4.add these lines to the hexo `_config` file
+
+```
+copymarkdown:
+  plugins:
+    - markdown-it-footnote
+    - markdown-it-sup
+    - markdown-it-sub
+    - markdown-it-abbr
+    - markdown-it-emoji
+    - hexo-math
+```
+
+5.add these lines to the theme `_config` file
+
+```
+copy# MathJax Support
+mathjax:
+  enable: true
+  per_page: true
+```
+
+6.rebuild the to blog see changes
+
+7.Examples: $this_{is}an\frac{inline}{equation}$
+$$
+\begin{equation}
+    \mathbf{K}=\frac{1}{\Delta r}\left[\begin{matrix}0&\begin{matrix}\cdots&\frac{1}{2}\\\end{matrix}&\begin{matrix}-2&\frac{3}{2}\\\end{matrix}\\\vdots&\begin{matrix}\cdots\ \ \ \ &\vdots\ \ \\\end{matrix}&\begin{matrix}\vdots\ \ \ \ &\vdots\\\end{matrix}\\\end{matrix}\right] ,\ \
+        \mathbf{K}_\mathbf{3}=\frac{1}{2}\ \left[\begin{matrix}\begin{matrix}1\\\begin{matrix}\\\\\end{matrix}\\\end{matrix}&\begin{matrix}1\ &\\\begin{matrix}\ddots\ \\\\\end{matrix}&\begin{matrix}\ddots\\\ \ddots\\\end{matrix}\\\end{matrix}&\begin{matrix}\begin{matrix}&\\\end{matrix}\\\begin{matrix}\begin{matrix}&\\\end{matrix}\\\begin{matrix}\ \ddots&\\\end{matrix}\\\end{matrix}\\\end{matrix}\\&\begin{matrix}&\\\end{matrix}&\begin{matrix}1&1\\\end{matrix}\\&\begin{matrix}&\\\end{matrix}&\begin{matrix}&2\\\end{matrix}\\\end{matrix}\right]
+        \label{K1}
+\end{equation}
+$$
+
 
 ## Reference
 

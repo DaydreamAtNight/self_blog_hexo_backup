@@ -132,3 +132,8 @@ sitemap:
   path: sitemap.xml
 baidusitemap:
   path: baidusitemap.xml
+
+# hexo plugins
+markdown:
+  plugins:
+    - hexo-math
