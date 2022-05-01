@@ -902,10 +902,10 @@ page:
 # 404 Page
 #---------------------------
 page404:
-  enable: false
+  enable: true
   banner_img: /img/article_banner.png
-  banner_img_height: 30
-  banner_mask_alpha: 0.1
+  banner_img_height: 100
+  banner_mask_alpha: 0
   subtitle: "Page not found"
 
 

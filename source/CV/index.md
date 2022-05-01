@@ -12,7 +12,7 @@ date: 2022-05-01 16:58:03
 
 Pre R&D, [Shanghai Volkswagen Automotive Co., Ltd](https://volkswagengroupchina.com.cn/en/partner/saicvolkswagen).
 
-- OpenFOAM developing
+- OpenFOAM developing on automotive aerodynamic
 - Intelligent aided fluid dynamic
 
 Education Background
@@ -41,7 +41,7 @@ School of Power and Energy, Northwestern Polytechnical University
 Academic Projects
 ---
 
-#### Bifurcation and Oscillation Effects of Gyrotactic Swimming Microorganism Suspension in Vertical Pipe
+### Bifurcation and Oscillation Effects of Gyrotactic Swimming Microorganism Suspension in Vertical Pipe
 
 <div style="margin-top:-2%; text-align: right"> 05/2020-10/2020 </div> 
 
@@ -55,7 +55,7 @@ Director: [Dr. Yongyun Hwang](https://www.imperial.ac.uk/people/y.hwang)
 
 
 
-#### Flow Field Analysis Based on RANS Solver and BiGlobal Stability Theory
+### Flow Field Analysis Based on RANS Solver and BiGlobal Stability Theory
 
 <div style="margin-top:-3%; text-align: right"> 02/2019-06/2019 </div> 
 
@@ -71,7 +71,7 @@ Director: [Professor Eusebio Valero Sanchez](http://www.upm.es/observatorio/vi/i
 
 
 
-#### Design Research on Bionic Anti-drag Propeller (Project Manager)
+### Design Research on Bionic Anti-drag Propeller (Project Manager)
 
 <div style="margin-top:-3%; text-align: right"> 04/2017-04/2018 </div> 
 
@@ -84,7 +84,7 @@ Director: [Professor Wang yangang](https://teacher.nwpu.edu.cn/wangyg.html)
 
 
 
-#### Experimental Fluid Mechanics (Summer School)
+### Experimental Fluid Mechanics (Summer School)
 
 <div style="margin-top:-3%; text-align: right"> 8/2018 </div> 
 
@@ -96,7 +96,7 @@ Director: [Professor Wang yangang](https://teacher.nwpu.edu.cn/wangyg.html)
 
 
 
-#### Starting Test of Pulse Jet Engine (In Pairs)
+### Starting Test of Pulse Jet Engine (In Pairs)
 
 <div style="margin-top:-3%; text-align: right"> 07/2017-08/2017 </div> 
 

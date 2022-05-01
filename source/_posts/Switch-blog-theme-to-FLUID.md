@@ -47,3 +47,4 @@ npm update --save hexo-theme-fluid
 
 create `_config.fluid.yml` in the blog directory and copy the content of [_config.yml](https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml)
 
+And the config file so far is 
