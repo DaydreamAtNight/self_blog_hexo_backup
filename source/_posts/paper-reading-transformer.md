@@ -1,6 +1,6 @@
 ---
 title: 'paper reading: transformer'
-author: daydreamatnight
+author: Ryan LI
 toc: true
 declare: true
 date: 2022-04-12 23:31:21

@@ -1,6 +1,6 @@
 ---
 title: 'paper reading: AlexNet'
-author: daydreamatnight
+author: Ryan LI
 toc: true
 declare: true
 date: 2022-04-07 22:25:50

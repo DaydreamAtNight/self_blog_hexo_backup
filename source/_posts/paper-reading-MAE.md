@@ -1,6 +1,6 @@
 ---
 title: 'paper reading: MAE'
-author: daydreamatnight
+author: Ryan LI
 toc: true
 declare: true
 date: 2022-04-27 02:00:38

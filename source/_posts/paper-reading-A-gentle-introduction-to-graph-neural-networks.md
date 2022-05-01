@@ -1,6 +1,6 @@
 ---
 title: 'paper reading: A gentle introduction to graph neural networks'
-author: daydreamatnight
+author: Ryan LI
 declare: true
 date: 2022-04-14 13:58:38
 tags:

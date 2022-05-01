@@ -1,6 +1,6 @@
 ---
 title: 'paper reading: Vision Transformer'
-author: daydreamatnight
+author: Ryan LI
 toc: true
 declare: true
 date: 2022-04-21 20:42:10

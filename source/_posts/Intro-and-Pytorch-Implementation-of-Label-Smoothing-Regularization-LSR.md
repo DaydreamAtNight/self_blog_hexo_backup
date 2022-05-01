@@ -1,6 +1,6 @@
 ---
 title: Intro and Pytorch Implementation of Label Smoothing Regularization (LSR)
-author: daydreamatnight
+author: Ryan LI
 toc: true
 declare: true
 date: 2022-03-04 13:59:58

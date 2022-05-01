@@ -1,6 +1,6 @@
 ---
 title: install d2l module on apple m1 chip for deep learning
-author: daydreamatnight
+author: Ryan LI
 toc: true
 declare: true
 date: 2022-02-28 22:30:11

@@ -57,7 +57,7 @@ code:
       # 在链接中挑选 style 填入
       # Select a style in the link
       # See: https://highlightjs.org/static/demo/
-      style: "Github Gist"
+      style: "A 11 Y light"
 
       # 是否根据 style 改变代码背景色（如果 style 是深色背景别忘了开启此项）
       # If true, the code background will change color based on the style (If style has a dark background, don't forget to true)
@@ -201,6 +201,7 @@ font:
 # 指定自定义 .js 文件路径，支持列表；路径是相对 source 目录，如 /js/custom.js 对应存放目录 source/js/custom.js
 # Specify the path of your custom js file, support list. The path is relative to the source directory, such as `/js/custom.js` corresponding to the directory `source/js/custom.js`
 custom_js:
+   - //cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicLine.min.js # 动态黑色线条
 
 # 指定自定义 .css 文件路径，用法和 custom_js 相同
 # The usage is the same as custom_js
@@ -395,10 +396,15 @@ open_graph:
 footer:
   # 页脚第一行文字的 HTML，建议保留 Fluid 的链接，用于向更多人推广本主题
   # HTML of the first line of the footer, it is recommended to keep the Fluid link to promote this theme to more people
+  # content: '
+  #   <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+  #   <i class="iconfont icon-love"></i>
+  #   <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+  # '
   content: '
-    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+    <a href="https://daydreamatnight.github.io/about/" target="_blank" rel="nofollow noopener"><span>Shoushou</span></a>
     <i class="iconfont icon-love"></i>
-    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+    <a href="https://daydreamatnight.github.io/about/" target="_blank" rel="nofollow noopener"><span>Rourou</span></a>
   '
 
   # 展示网站的 PV、UV 统计数
@@ -437,17 +443,17 @@ footer:
 index:
   # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
-  banner_img: /img/main_banner.png
+  banner_img: /img/bg_banner.png
 
   # 头图高度，屏幕百分比
   # Height ratio of banner image
   # Available: 0 - 100
-  banner_img_height: 20
+  banner_img_height: 40
 
   # 头图黑色蒙版的不透明度，available: 0 - 1.0， 1 是完全不透明
   # Opacity of the banner mask, 1.0 is completely opaque
   # Available: 0 - 1.0
-  banner_mask_alpha: 0
+  banner_mask_alpha: .3
 
   # 首页副标题的独立设置
   # Independent config of home page subtitle
@@ -456,7 +462,7 @@ index:
 
     # 为空则按 hexo config.subtitle 显示
     # If empty, text based on `subtitle` in hexo config
-    text: "You're the cute girl who makes me blush."
+    text: "You're the cute girl who makes me blush"
 
     # 通过 API 接口作为首页副标题的内容，必须返回的是 JSON 格式，如果请求失败则按 text 字段显示，该功能必须先开启 typing 打字机功能
     # Subtitle of the homepage through the API, must be returned a JSON. If the request fails, it will be displayed in `text` value. This feature must first enable the typing animation
@@ -509,7 +515,7 @@ index:
 # Post Page
 #---------------------------
 post:
-  banner_img: /img/main_banner.png
+  banner_img: /img/article_banner.png
   banner_img_height: 30
   banner_mask_alpha: 0.1
 
@@ -803,7 +809,7 @@ cusdis:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: /img/main_banner.png
+  banner_img: /img/article_banner.png
   banner_img_height: 30
   banner_mask_alpha: 0.1
   subtitle:
@@ -815,7 +821,7 @@ archive:
 #---------------------------
 category:
   enable: false
-  banner_img: /img/main_banner.png
+  banner_img: /img/article_banner.png
   banner_img_height: 30
   banner_mask_alpha: 0.1
   subtitle:
@@ -845,7 +851,7 @@ category:
 #---------------------------
 tag:
   enable: true
-  banner_img: /img/main_banner.png
+  banner_img: /img/article_banner.png
   banner_img_height: 30
   banner_mask_alpha: 0.1
   subtitle:
@@ -863,19 +869,19 @@ tag:
 #---------------------------
 about:
   enable: true
-  banner_img: /img/main_banner.png
-  banner_img_height: 30
+  banner_img: /img/about_banner.png
+  banner_img_height: 20
   banner_mask_alpha: 0.1
   subtitle:
   avatar: /img/avatar.jpeg
-  name: "ShouRou"
+  name: "Ryan LI"
   intro: "Automotive CFD engineer; AI learner; Looking for PHD opportunities..."
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
   # More icons can be found from https://hexo.fluid-dev.com/docs/en/icon/  `class` is the css class of the icon. If adding `qrcode`, The icon is no longer a link, but a hovering QR code
   icons:
-    - { class: "iconfont icon-github-fill", link: "https://github.com", tip: "GitHub" }
-    # - { class: "iconfont icon-douban-fill", link: "https://douban.com", tip: "豆瓣" }
-    - { class: "iconfont icon-wechat-fill", qrcode: "/img/favicon.png" }
+    - { class: "iconfont icon-github-fill", link: "https://github.com/DaydreamAtNight", tip: "GitHub" }
+    - { class: "iconfont icon-mail", link: "mailto:sl3119@ic.ac.uk", tip: "Mail" }
+    # - { class: "iconfont icon-wechat-fill", qrcode: "/img/favicon.png" }
 
 
 #---------------------------
@@ -886,7 +892,7 @@ about:
 # Custom Page through `hexo new page`
 #---------------------------
 page:
-  banner_img: /img/main_banner.png
+  banner_img: /img/article_banner.png
   banner_img_height: 30
   banner_mask_alpha: 0.1
 
@@ -897,7 +903,7 @@ page:
 #---------------------------
 page404:
   enable: false
-  banner_img: /img/main_banner.png
+  banner_img: /img/article_banner.png
   banner_img_height: 30
   banner_mask_alpha: 0.1
   subtitle: "Page not found"
@@ -909,7 +915,7 @@ page404:
 #---------------------------
 links:
   enable: false
-  banner_img: /img/default.png
+  banner_img: /img/article_banner.png
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle:

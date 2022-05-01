@@ -1,6 +1,6 @@
 ---
 title: 'paper reading: ResNet'
-author: daydreamatnight
+author: Ryan LI
 toc: true
 declare: true
 date: 2022-04-09 20:42:00

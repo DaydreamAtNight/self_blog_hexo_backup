@@ -1,6 +1,6 @@
 ---
 title: learning rate schedule
-author: daydreamatnight
+author: Ryan LI
 toc: true
 declare: true
 date: 2022-03-08 09:32:32
