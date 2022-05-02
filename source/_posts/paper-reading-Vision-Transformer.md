@@ -4,6 +4,7 @@ author: Ryan LI
 toc: true
 declare: true
 date: 2022-04-21 20:42:10
+index_img: /index/paper-reading-ViT.png
 tags:
   - paper reading
   - deep learning 

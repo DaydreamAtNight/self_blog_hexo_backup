@@ -3,6 +3,7 @@ title: 'paper reading: start'
 author: Ryan LI
 declare: true
 date: 2022-04-02 21:49:37
+index_img: /index/paper-reading.png
 tags: 
   - paper reading
   - deep learning

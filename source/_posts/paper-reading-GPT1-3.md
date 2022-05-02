@@ -4,6 +4,7 @@ author: Ryan LI
 toc: true
 declare: true
 date: 2022-04-18 08:58:59
+index_img: /index/paper-reading-GPT1-3.png
 tags:
   - paper reading
   - deep learning
@@ -70,27 +71,38 @@ Besides, the paper accents the task-specific input adaptions, which is the key o
 
 GPT uses a task that giving the data of u<sub>n-k</sub> to u<sub>n-1</sub> to predict the u<sub>n</sub>. So the likelihood function to be maximised is:
 
-<img src="GPT loss.png" alt="GPT loss" style="zoom:25%;" />
-
+$$
+L_{1}(\mathcal{U})=\sum_{i} \log P\left(u_{i} \mid u_{i-k}, \ldots, u_{i-1} ; \Theta\right)
+$$
 Because the predicting task, the mechanism of the mask multi-head attention of transformer decoder matches the likelihood function perfectly. Because in the first layer of the transformer decoder, the data after u{i} are simply masked to be 0. 
 
 And the whole pre-training process is like this:
 
-<img src="GPT pretraining process.png" alt="GPT pretraining process" style="zoom:30%;" />
-
+$$
+\begin{aligned}
+h_{0} &=U W_{e}+W_{p} \\
+h_{l} &=\operatorname{transformer}\_\operatorname{block}\left(h_{l-1}\right) \forall i \in[1, n] \\
+P(u) &=\operatorname{softmax}\left(h_{n} W_{e}^{T}\right)
+\end{aligned}
+$$
 Compared with BERT, the biggest difference is never encoder or decoder, bidirectional or one-way along. The key is the pre-training task they choose, the completion task that Bert use is much easier than GPT's prediction task. Because this is the **difference between interpolation and extrapolation**. Therefore, BERT outperforms GPT on the same number of parameters. But the potential of the GPT series goes far beyond BERT. As a result, it took OpenAI years to develop such an impressive GPT-3 model. On another side, however, GPT's prediction task leads to a different architecture with BERT. And the decoder architecture makes the GPT model hard to be bidirectional from the start. We'll see how it conquer this.
 
 #### Supervised fine-tuning
 
 The fine-tuning task follows the standard supervise learning process as follows:
 
-<img src="GPT fine tune f2.png" alt="GPT fine tune f2" style="zoom:40%;" /> 
-
-with     <img src="GPT fine tune f1.png" alt="GPT fine tune f1" style="zoom:40%;" />
-
+$$
+L_{2}(\mathcal{C})=\sum_{(x, y)} \log P\left(y \mid x^{1}, \ldots, x^{m}\right)
+$$
+with
+$$
+P\left(y \mid x^{1}, \ldots, x^{m}\right)=\operatorname{softmax}\left(h_{l}^{m} W_{y}\right)
+$$
 And the authors find it helpful to optimise the L1 and L2 together as:
 
-<img src="GPT fine tune loss.png" alt="GPT fine tune loss" style="zoom:40%;" />
+$$
+L_{3}(\mathcal{C})=L_{2}(\mathcal{C})+\lambda * L_{1}(\mathcal{C})
+$$
 
 #### Task-specific input transformations
 

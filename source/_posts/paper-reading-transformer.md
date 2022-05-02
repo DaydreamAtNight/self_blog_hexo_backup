@@ -4,6 +4,7 @@ author: Ryan LI
 toc: true
 declare: true
 date: 2022-04-12 23:31:21
+index_img: /index/paper-reading-transformer.png
 tags:
   - paper reading
   - deep learning
