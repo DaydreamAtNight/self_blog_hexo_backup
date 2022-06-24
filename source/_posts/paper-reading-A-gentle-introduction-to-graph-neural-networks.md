@@ -1,5 +1,5 @@
 ---
-title: 'paper reading: A gentle introduction to graph neural networks'
+title: 'Introduction to GNN'
 author: Ryan LI
 declare: true
 date: 2022-04-14 13:58:38
@@ -10,7 +10,7 @@ tags:
 ---
 > This is a tech blog written by google research team in 2021 that introducing the graph neural network. GNN has gradually become popular in the last 4 years. Personally, I think the graph structure looks similar to the CFD mesh, and there are works  focusing on simulating physics via GNN.
 
-> This is a [series of paper reading notes](https://daydreamatnight.github.io/2022/04/02/paper-reading-start/), hopefully, to push me to read paper casually and to leave some record of what I've learned.
+> This is a [series of paper reading notes](/2022/04/02/paper-reading-start/), hopefully, to push me to read paper casually and to leave some record of what I've learned.
 
 <!-- more -->
 

@@ -1,5 +1,5 @@
 ---
-title: 'paper reading: MAE'
+title: 'Masked Autoencoder(MAE)'
 author: Ryan LI
 toc: true
 declare: true
@@ -13,7 +13,7 @@ tags:
 
 <!-- more -->
 
-> This is a [series of paper reading notes](https://daydreamatnight.github.io/2022/04/02/paper-reading-start/), hopefully, to push me to read paper casually and to leave some record of what I've learned.
+> This is a [series of paper reading notes](/2022/04/02/paper-reading-start/), hopefully, to push me to read paper casually and to leave some record of what I've learned.
 
 Paper: [Masked autoencoders are scalable vision learners](https://arxiv.org/abs/2111.06377)
 
@@ -179,11 +179,10 @@ At last, down steam tasks are evaluated compared with other frameworks.
 
 Writing, simple but has a very good storyline. From the full introduction of the motivation, to the detailed clear figures explaining each part of the design.
 
-The algorithm is simple, just applying self-supervised learning to CV based on ViT[^8]. 3 points are noted:
+The algorithm is simple, just applying self-supervised learning to CV based on ViT[^8]. 2 key points are introduced:
 
 - More patches need to be masked
 - Transformer decoder to reproduce the pixels instead of a simple linear layer projecting patches into tokens.
-- More details to make the model robuster.
 
 In conclusion, a simple idea, a great result and detailed experiments make this paper a great work. 
 

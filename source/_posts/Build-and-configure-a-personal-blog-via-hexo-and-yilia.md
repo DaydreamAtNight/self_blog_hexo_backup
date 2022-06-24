@@ -12,7 +12,7 @@ tags:
 >
 > This blog records the process of building and customizing this personal blog from 0 to 1
 
-> Unfortunately, the yilia theme has been no longer updating and it is too buggy right now. I switch to other theme.
+> Unfortunately, the yilia theme has been no longer updating and it is too buggy right now. I switch to [other theme.](/2022/04/30/Switch-blog-theme-to-FLUID/)
 
 <!-- more -->
 

@@ -360,8 +360,8 @@ img[lazyload] {
 }
 :root {
   --color-mode: 'light';
-  --body-bg-color: #eee;
-  --board-bg-color: #fafafa;
+  --body-bg-color: #ebeee8;
+  --board-bg-color: #f8f8f8;
   --text-color: #3c4858;
   --sec-text-color: #718096;
   --post-text-color: #2c3e50;

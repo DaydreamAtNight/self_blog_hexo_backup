@@ -1,5 +1,5 @@
 ---
-title: 'paper reading: Vision Transformer'
+title: 'Vision Transformer'
 author: Ryan LI
 toc: true
 declare: true
@@ -12,7 +12,7 @@ tags:
 
 > Presented in 2021, the vision transformer model (ViT) is the most influential work in the CV field recent years. Its variants outperform the dominant convolutional networks in almost all CV tasks such as [classification](https://paperswithcode.com/sota/image-classification-on-imagenet) and [object detection](https://paperswithcode.com/sota/object-detection-on-coco). And it breaks the border of CV and NLP, providing new thoughts to CV and multi-model areas.
 
-> This is a [series of paper reading notes](https://daydreamatnight.github.io/2022/04/02/paper-reading-start/), hopefully, to push me to read paper casually and to leave some record of what I've learned.
+> This is a [series of paper reading notes](/2022/04/02/paper-reading-start/),  hopefully, to push me to read paper casually and to leave some record of what I've learned.
 
 <!-- more -->
 

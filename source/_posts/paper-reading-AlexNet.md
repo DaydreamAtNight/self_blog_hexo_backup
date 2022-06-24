@@ -1,5 +1,5 @@
 ---
-title: 'paper reading: AlexNet'
+title: 'AlexNet'
 author: Ryan LI
 toc: true
 declare: true
@@ -12,7 +12,7 @@ tags:
 
 > It has been 10 years since AlexNet has been brought out. It is one of the cornerstones of this surge of deep learning.
 
-> This is a [series of paper reading notes](https://daydreamatnight.github.io/2022/04/02/paper-reading-start/), hopefully, to push me to read paper casually and to leave some record of what I've learned.
+> This is a [series of paper reading notes](/2022/04/02/paper-reading-start/), hopefully, to push me to read paper casually and to leave some record of what I've learned.
 
 <!-- more -->
 

@@ -1,5 +1,5 @@
 ---
-title: 'paper reading: ResNet'
+title: 'ResNet'
 author: Ryan LI
 toc: true
 declare: true
@@ -12,7 +12,7 @@ tags:
 
 > Since its introduction in 2015, ResNet and its variants have accounted for 50% of deep neural networks in use. The idea of "Residual" has been proved to be efficient and important to deep NN.
 
-> This is a [series of paper reading notes](https://daydreamatnight.github.io/2022/04/02/paper-reading-start/), hopefully, to push me to read paper casually and to leave some record of what I've learned.
+> This is a [series of paper reading notes](/2022/04/02/paper-reading-start/), hopefully, to push me to read paper casually and to leave some record of what I've learned.
 
 <!-- more -->
 

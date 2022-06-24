@@ -11,7 +11,7 @@ tags:
 
 > This is a brief description of the 3-step method of reading a paper. And a reading list.
 
-> This is a [series of paper reading notes](https://daydreamatnight.github.io/2022/04/02/paper-reading-start/), hopefully, to push me to read paper casually and to leave some record of what I've learned.
+> This is a [series of paper reading notes](/2022/04/02/paper-reading-start/), hopefully, to push me to read paper casually and to leave some record of what I've learned.
 
 <!-- more -->
 
@@ -21,17 +21,19 @@ tags:
 
 - Classic
   - Vision
-    - [AlexNet](https://daydreamatnight.github.io/2022/04/07/paper-reading-AlexNet/)
-    - [ResNet](https://daydreamatnight.github.io/2022/04/09/paper-reading-ResNet/)
-- [Transformer](https://daydreamatnight.github.io/2022/04/12/paper-reading-transformer/)
+    - [AlexNet](/2022/04/07/paper-reading-AlexNet/)
+    - [ResNet](/2022/04/09/paper-reading-ResNet/)
+- [Transformer](/2022/04/12/paper-reading-transformer/)
   - NLP
-    - [BERT](https://daydreamatnight.github.io/2022/04/15/paper-reading-bert/)
-    - [GPT1-3](https://daydreamatnight.github.io/2022/04/18/paper-reading-GPT1-3/)
+    - [BERT](/2022/04/15/paper-reading-bert/)
+    - [GPT1-3](/2022/04/18/paper-reading-GPT1-3/)
   - Vision
-    - [ViT](https://daydreamatnight.github.io/2022/04/21/paper-reading-Vision-Transformer/)
-      - [MAE](https://daydreamatnight.github.io/2022/04/27/paper-reading-MAE/)
+    - [ViT](/2022/04/21/paper-reading-Vision-Transformer/)
+      - [MAE](/2022/04/27/paper-reading-MAE/)
 - Novel 
-  - [ GNN intro](https://daydreamatnight.github.io/2022/04/14/paper-reading-A-gentle-introduction-to-graph-neural-networks/)
+  - [ GNN intro](/2022/04/14/paper-reading-A-gentle-introduction-to-graph-neural-networks/)
+  - [Constructive learning review](/2022/05/03/paper-reading-contrastive-learning-review/)
+    - Moco
 
 {%endmarkmap%}
 
@@ -71,18 +73,20 @@ The method is inspired by [Andrew Ng's lecutre on Stanford](https://youtu.be/733
 
 ### List of papers
 
-[paper reading: AlexNet](https://daydreamatnight.github.io/2022/04/07/paper-reading-AlexNet/)
+[paper reading: AlexNet](/2022/04/07/paper-reading-AlexNet/)
 
-[paper reading: ResNet](https://daydreamatnight.github.io/2022/04/09/paper-reading-ResNet/)
+[paper reading: ResNet](/2022/04/09/paper-reading-ResNet/)
 
-[paper reading: transformer](https://daydreamatnight.github.io/2022/04/12/paper-reading-transformer/)
+[paper reading: transformer](/2022/04/12/paper-reading-transformer/)
 
-[paper reading: A gentle introduction to graph neural networks](https://daydreamatnight.github.io/2022/04/14/paper-reading-A-gentle-introduction-to-graph-neural-networks/)
+[paper reading: Introduction to GNN](/2022/04/14/paper-reading-A-gentle-introduction-to-graph-neural-networks/)
 
-[paper reading: bert](https://daydreamatnight.github.io/2022/04/15/paper-reading-bert/)
+[paper reading: bert](/2022/04/15/paper-reading-bert/)
 
-[paper reading: GPT1-3](https://daydreamatnight.github.io/2022/04/18/paper-reading-GPT1-3/)
+[paper reading: GPT1-3](/2022/04/18/paper-reading-GPT1-3/)
 
-[paper reading: Vision Transformer](https://daydreamatnight.github.io/2022/04/21/paper-reading-Vision-Transformer/)
+[paper reading: Vision Transformer](/2022/04/21/paper-reading-Vision-Transformer/)
 
-[paper reading: MAE](https://daydreamatnight.github.io/2022/04/27/paper-reading-MAE/)
+[paper reading: MAE](/2022/04/27/paper-reading-MAE/)
+
+[Paper reading: Constructive learning review](/2022/05/03/paper-reading-contrastive-learning-review/)

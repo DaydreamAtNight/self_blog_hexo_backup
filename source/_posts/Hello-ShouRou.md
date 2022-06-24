@@ -1,7 +1,7 @@
 ---
 title: Hello ShouRou
 date: 2022-02-22 10:44:29
-tags: First Blog
+tags: blog
 ---
 
 ### Welcome

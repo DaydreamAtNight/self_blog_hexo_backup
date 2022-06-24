@@ -1,10 +1,12 @@
 ---
 title: {{ title }}
 date: {{ date }}
-author: daydreamatnight
+author: Ryan LI
 toc: true
 declare: true
+index_img: /index/_.png
 tags:
+  - tag
 #img: /source/images/xxx.jpg #图片 
 #top: true #是否顶置 
 #cover: true #是否在引导页轮播 

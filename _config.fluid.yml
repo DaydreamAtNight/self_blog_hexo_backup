@@ -128,7 +128,7 @@ dark_mode:
 color:
   # body 背景色
   # Color of body background
-  body_bg_color: "#eee"
+  body_bg_color: "#ebeee8"
   # 暗色模式下的 body 背景色，下同
   # Color in dark mode, the same below
   body_bg_color_dark: "#272018"
@@ -180,7 +180,7 @@ color:
 
   # 主面板背景色
   # Color of main board
-  board_color: "#fafafa"
+  board_color: "#f8f8f8"
   board_color_dark: "#1f1d1b"
 
   # 滚动条颜色
@@ -202,6 +202,8 @@ font:
 # Specify the path of your custom js file, support list. The path is relative to the source directory, such as `/js/custom.js` corresponding to the directory `source/js/custom.js`
 custom_js:
    - //cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicLine.min.js # 动态黑色线条
+   - //cdn.jsdelivr.net/npm/echarts@4.8.0/dist/echarts.min.js" #通过jsDelivr的CDN引入echarts
+   - <script src="https://cdn.jsdelivr.net/npm/echarts-gl@1.1.1/dist/echarts-gl.min.js #使用GL里的各种组件时需要添加，否则可不需要
 
 # 指定自定义 .css 文件路径，用法和 custom_js 相同
 # The usage is the same as custom_js
@@ -573,7 +575,7 @@ post:
   # 在文章开头显示文章更新时间，该时间默认是 md 文件更新时间，可通过 front-matter 中 `updated` 手动指定（和 date 一样格式）
   # Update date is displayed at the beginning of the post. The default date is the update date of the md file, which can be manually specified by `updated` in front-matter (same format as date)
   updated:
-    enable: true
+    enable: false
 
     # 描述文字
     # Descriptive text before date
@@ -592,13 +594,13 @@ post:
     headingSelector: "h1,h2,h3,h4,h5,h6"
     # 层级的折叠深度，0 是全部折叠，大于 0 后如果存在下级标题则默认展开
     # Collapse depth. If 0, all headings collapsed. If greater than 0, it will be expanded by default if there are sub headings
-    collapseDepth: 0
+    collapseDepth: 4
 
   # 版权声明，会显示在每篇文章的结尾
   # Copyright, will be displayed at the end of each post
   copyright:
     enable: true
-    content: 'This blog is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 licience</a>'
+    content: 'Copyright: This blog is provided under a <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 licience</a>'
 
   # 文章底部上一篇下一篇功能
   # Link to previous/next post
@@ -646,7 +648,7 @@ post:
   mermaid:
     # 开启后文章默认可用，自定义页面如需使用，需在 Front-matter 中指定 `mermaid: true`
     # If you want to use mermaid on the custom page, you need to set `mermaid: true` in Front-matter
-    enable: false
+    enable: true
 
     # 开启后，只有在文章 Front-matter 里指定 `mermaid: true` 才会在文章页启动公式转换，以便在页面不包含公式时提高加载速度
     # If true, only set `mermaid: true` in Front-matter will enable mermaid, to load faster when the page does not contain mermaid

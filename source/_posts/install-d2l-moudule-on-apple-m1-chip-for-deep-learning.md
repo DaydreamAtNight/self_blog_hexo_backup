@@ -5,7 +5,7 @@ toc: true
 declare: true
 date: 2022-02-28 22:30:11
 tags:
-  - m1 mac
+  - mac
   - deep learning
 ---
 

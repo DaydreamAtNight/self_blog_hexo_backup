@@ -10,7 +10,7 @@ tags:
   - blog
 ---
 
-> The former "yilia" theme starts to be buggy since it was no longer maintained. I switch to this "FUILD" theme, for now, hopefully it will stand.
+> The former "yilia" theme starts to be buggy since it was no longer maintained. I switch to this "FUILD" theme, for now, hopefully it will stand longer.
 
 <!-- more -->
 
@@ -53,3 +53,19 @@ And the config file so far is [_config.fluid.yml](https://github.com/DaydreamAtN
 done
 
 ... way easier than the theme before
+
+### Additional settings
+
+#### Compress files add-on
+
+ [hexo-all-minifier](https://github.com/chenzhutian/hexo-all-minifier) is an easy and effective add-on to compress the images and bigger css/js files. 
+
+```
+npm install hexo-all-minifier --save
+```
+
+Config it in `config.yml`.
+
+```
+all_minifier: true
+```

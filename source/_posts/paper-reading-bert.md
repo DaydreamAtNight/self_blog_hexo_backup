@@ -1,5 +1,5 @@
 ---
-title: 'paper reading: bert'
+title: 'Bert'
 author: Ryan LI
 toc: true
 declare: true
@@ -11,7 +11,7 @@ tags:
 ---
 >The BERT is the most important achievement in the NLP field in the last 4 years. It makes the transfer learning of NLP tasks possible and the transformer framework dominant the NLP field.
 
-> This is a [series of paper reading notes](https://daydreamatnight.github.io/2022/04/02/paper-reading-start/), hopefully, to push me to read paper casually and to leave some record of what I've learned.
+> This is a [series of paper reading notes](/2022/04/02/paper-reading-start/), hopefully, to push me to read paper casually and to leave some record of what I've learned.
 
 <!-- more -->
 

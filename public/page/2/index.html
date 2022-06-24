@@ -47,7 +47,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"daydreamatnight.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":1,"cursorChar":"","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"♪"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"daydreamatnight.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":1,"cursorChar":"","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"♪"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":4},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -176,18 +176,24 @@
   <div class="row mx-auto index-card">
     
     
-    <article class="col-12 col-md-12 mx-auto index-info">
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/05/09/paper-reading-Swin-transformer/" target="_self">
+          <img src="/index/paper-reading-Swin-transformer.png" alt="Swin transformer">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/03/08/learning-rate-schedule/" target="_self">
-          learning rate schedule
+        <a href="/2022/05/09/paper-reading-Swin-transformer/" target="_self">
+          Swin transformer
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2022/03/08/learning-rate-schedule/" target="_self">
+        <a href="/2022/05/09/paper-reading-Swin-transformer/" target="_self">
           
-          Learning rate schedule is one commonly used trick to control the process of training. Different kinds of learning tricks are presented every day. In this article, I have put together classical method
+          After ViT, Swin-transformer further demonstrated the potential of transformer in CV. This work has swept all major CV tasks since its publication, including COCO and ADE20K. And it&#39;s awar
         </a>
       </p>
 
@@ -195,8 +201,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-03-08 09:32" pubdate>
-              2022-03-08
+            <time datetime="2022-05-09 11:37" pubdate>
+              2022-05-09
             </time>
           </div>
         
@@ -207,7 +213,7 @@
             
               <a href="/tags/deep-learning/">deep learning</a>
             
-              <a href="/tags/deep-learning-tricks/">deep learning tricks</a>
+              <a href="/tags/paper-reading/">paper reading</a>
             
           </div>
         
@@ -218,18 +224,24 @@
   <div class="row mx-auto index-card">
     
     
-    <article class="col-12 col-md-12 mx-auto index-info">
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/05/03/paper-reading-contrastive-learning-review/" target="_self">
+          <img src="/index/paper-reading-contrastive-learning-review.png" alt="Contrastive learning review">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/03/04/Intro-and-Pytorch-Implementation-of-Label-Smoothing-Regularization-LSR/" target="_self">
-          Intro and Pytorch Implementation of Label Smoothing Regularization (LSR)
+        <a href="/2022/05/03/paper-reading-contrastive-learning-review/" target="_self">
+          Contrastive learning review
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2022/03/04/Intro-and-Pytorch-Implementation-of-Label-Smoothing-Regularization-LSR/" target="_self">
+        <a href="/2022/05/03/paper-reading-contrastive-learning-review/" target="_self">
           
-          Soft label is a commonly used trick to prevent overfitting. It can always gain some extra points on the image classification tasks. In this article, I have put together useful information from theory
+          As a form of unsupervised learning, contrastive learning plays an ever more important role in deep learning. Here&#39;s a review of contrastive learning in CV since 2018, including 4 stages a
         </a>
       </p>
 
@@ -237,8 +249,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-03-04 13:59" pubdate>
-              2022-03-04
+            <time datetime="2022-05-03 01:21" pubdate>
+              2022-05-03
             </time>
           </div>
         
@@ -249,7 +261,7 @@
             
               <a href="/tags/deep-learning/">deep learning</a>
             
-              <a href="/tags/deep-learning-tricks/">deep learning tricks</a>
+              <a href="/tags/paper-reading/">paper reading</a>
             
           </div>
         
@@ -260,60 +272,24 @@
   <div class="row mx-auto index-card">
     
     
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2022/02/28/install-d2l-moudule-on-apple-m1-chip-for-deep-learning/" target="_self">
-          install d2l module on apple m1 chip for deep learning
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/04/30/Switch-blog-theme-to-FLUID/" target="_self">
+          <img src="/index/Switch-blog-theme-to-FLUID.png" alt="Switch blog theme to FLUID">
         </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2022/02/28/install-d2l-moudule-on-apple-m1-chip-for-deep-learning/" target="_self">
-          
-          d2l is a small python module wheel that needed when read the useful deep learning book &quot;dive into deeplearning&quot;, which provide interactive code examples implemented with MXNet, PyTorch, and Tensorflo
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-02-28 22:30" pubdate>
-              2022-02-28
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/deep-learning/">deep learning</a>
-            
-              <a href="/tags/m1-mac/">m1 mac</a>
-            
-          </div>
-        
       </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
     
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
+    <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/02/22/Build-and-configure-a-personal-blog-via-hexo-and-yilia/" target="_self">
-          Build and configure a personal blog via hexo and yilia on github
+        <a href="/2022/04/30/Switch-blog-theme-to-FLUID/" target="_self">
+          Switch blog theme to FLUID
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2022/02/22/Build-and-configure-a-personal-blog-via-hexo-and-yilia/" target="_self">
+        <a href="/2022/04/30/Switch-blog-theme-to-FLUID/" target="_self">
           
-          Technical blog has a hundred benefits and no harm This blog records the process of building and customizing this personal blog from 0 to 1   Unfortunately, the yilia theme has been no longer updating
+          The former &quot;yilia&quot; theme starts to be buggy since it was no longer maintained. I switch to this &quot;FUILD&quot; theme, for now, hopefully it will stand longer.
         </a>
       </p>
 
@@ -321,8 +297,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-02-22 16:15" pubdate>
-              2022-02-22
+            <time datetime="2022-04-30 16:05" pubdate>
+              2022-04-30
             </time>
           </div>
         
@@ -330,11 +306,11 @@
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/hexo/">hexo</a>
             
               <a href="/tags/blog/">blog</a>
             
+              <a href="/tags/hexo/">hexo</a>
+            
           </div>
         
       </div>
@@ -344,18 +320,24 @@
   <div class="row mx-auto index-card">
     
     
-    <article class="col-12 col-md-12 mx-auto index-info">
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/04/27/paper-reading-MAE/" target="_self">
+          <img src="/index/paper-reading-MAE.png" alt="Masked Autoencoder(MAE)">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/02/22/Hello-ShouRou/" target="_self">
-          Hello ShouRou
+        <a href="/2022/04/27/paper-reading-MAE/" target="_self">
+          Masked Autoencoder(MAE)
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2022/02/22/Hello-ShouRou/" target="_self">
+        <a href="/2022/04/27/paper-reading-MAE/" target="_self">
           
-          Welcome This is the first blog on ShouRou. The name of the website is extracted from the cute nikenames between a pair of good-looking lovers. Shoushou the dumb and his girl Rourou the clever, cute an
+          Published in Dec 2021, this new work by Kaiming He draws a lot of attention from the community. The astounding result of unsupervised transfer learning and the capability of reconstructing highly mas
         </a>
       </p>
 
@@ -363,8 +345,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-02-22 10:44" pubdate>
-              2022-02-22
+            <time datetime="2022-04-27 02:00" pubdate>
+              2022-04-27
             </time>
           </div>
         
@@ -373,7 +355,297 @@
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/First-Blog/">First Blog</a>
+              <a href="/tags/deep-learning/">deep learning</a>
+            
+              <a href="/tags/paper-reading/">paper reading</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/04/21/paper-reading-Vision-Transformer/" target="_self">
+          <img src="/index/paper-reading-ViT.png" alt="Vision Transformer">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/04/21/paper-reading-Vision-Transformer/" target="_self">
+          Vision Transformer
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2022/04/21/paper-reading-Vision-Transformer/" target="_self">
+          
+          Presented in 2021, the vision transformer model (ViT) is the most influential work in the CV field recent years. Its variants outperform the dominant convolutional networks in almost all CV tasks suc
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-04-21 20:42" pubdate>
+              2022-04-21
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/deep-learning/">deep learning</a>
+            
+              <a href="/tags/paper-reading/">paper reading</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/04/18/paper-reading-GPT1-3/" target="_self">
+          <img src="/index/paper-reading-GPT1-3.png" alt="GPT1-3">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/04/18/paper-reading-GPT1-3/" target="_self">
+          GPT1-3
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2022/04/18/paper-reading-GPT1-3/" target="_self">
+          
+          GPT-3 is the most popular generative language model now. With more than 100 billion parameters, the performance is proved to be great and by now there are more than hundreds of works (commercial or a
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-04-18 08:58" pubdate>
+              2022-04-18
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/deep-learning/">deep learning</a>
+            
+              <a href="/tags/paper-reading/">paper reading</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/04/15/paper-reading-bert/" target="_self">
+          <img src="/index/paper-reading-bert.png" alt="Bert">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/04/15/paper-reading-bert/" target="_self">
+          Bert
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2022/04/15/paper-reading-bert/" target="_self">
+          
+          The BERT is the most important achievement in the NLP field in the last 4 years. It makes the transfer learning of NLP tasks possible and the transformer framework dominant the NLP field.   This is a
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-04-15 18:01" pubdate>
+              2022-04-15
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/deep-learning/">deep learning</a>
+            
+              <a href="/tags/paper-reading/">paper reading</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/04/14/paper-reading-A-gentle-introduction-to-graph-neural-networks/" target="_self">
+          <img src="/index/paper-reading-GNN.png" alt="Introduction to GNN">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/04/14/paper-reading-A-gentle-introduction-to-graph-neural-networks/" target="_self">
+          Introduction to GNN
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2022/04/14/paper-reading-A-gentle-introduction-to-graph-neural-networks/" target="_self">
+          
+          This is a tech blog written by google research team in 2021 that introducing the graph neural network. GNN has gradually become popular in the last 4 years. Personally, I think the graph structure lo
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-04-14 13:58" pubdate>
+              2022-04-14
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/deep-learning/">deep learning</a>
+            
+              <a href="/tags/paper-reading/">paper reading</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/04/12/paper-reading-transformer/" target="_self">
+          <img src="/index/paper-reading-transformer.png" alt="Transformer">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/04/12/paper-reading-transformer/" target="_self">
+          Transformer
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2022/04/12/paper-reading-transformer/" target="_self">
+          
+          The transformer is the most important achievement in the last 5 years. It presents the fourth class of deep learning models besides MLP, CNN and RNN. And had a huge impact on the entire deep learning
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-04-12 23:31" pubdate>
+              2022-04-12
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/deep-learning/">deep learning</a>
+            
+              <a href="/tags/paper-reading/">paper reading</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/04/09/paper-reading-ResNet/" target="_self">
+          <img src="/index/paper-reading-ResNet.png" alt="ResNet">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/04/09/paper-reading-ResNet/" target="_self">
+          ResNet
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2022/04/09/paper-reading-ResNet/" target="_self">
+          
+          Since its introduction in 2015, ResNet and its variants have accounted for 50% of deep neural networks in use. The idea of &quot;Residual&quot; has been proved to be efficient and important to deep NN.   This
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-04-09 20:42" pubdate>
+              2022-04-09
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/deep-learning/">deep learning</a>
+            
+              <a href="/tags/paper-reading/">paper reading</a>
             
           </div>
         
@@ -385,7 +657,7 @@
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#board">3</a><a class="extend next" rel="next" href="/page/3/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
 
@@ -536,6 +808,8 @@
 
   
 <script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicLine.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/echarts@4.8.0/dist/echarts.min.js".js"></script>
+<script src="/%3Cscript%20src=%22https:/cdn.jsdelivr.net/npm/echarts-gl@1.1.1/dist/echarts-gl.min.js"></script>
 
 
 
