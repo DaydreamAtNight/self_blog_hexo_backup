@@ -12,7 +12,7 @@ date: 2022-06-18 18:08:24
 
 {% note primary %}
 
-This is the **essence** of CFD, advecting with the discontinuities due to inviscid fluid PDEs. Several computational schemes dealing with them are introduced then tested in OpenFOAM on the 1D shockTube case.
+This is the **essence** of CFD, advecting with the discontinuities due to inviscid fluid PDEs. Several computational schemes are introduced with fortran scripts and at last tested with OpenFOAM on the 1D shockTube case.
 
 {% endnote%}
 
@@ -571,9 +571,9 @@ If a scheme is stable on linear PDEs, it will often (not all the time) be stable
 
 So the work flow is, 1. Given a non-linear PDE, 2. Linearise it to explore the stabilities of schemes on it. 3. Test the winners on non-linear PDEs.
 
-### 1D linear convection equation
+### Schemes on linear convection equation
 
-First we consider a <font color=#75147c>linear</font> case, linear convection equation:
+First we consider a <font color=#75147c>1D linear</font> case, linear convection equation:
 $$
 \frac{\partial u}{\partial t} + a\frac{\partial u}{\partial x} = 0
 $$
@@ -582,30 +582,402 @@ $$
 f(u) = au
 $$
 
-##### Numerical scheme
+#### Base finite difference scheme
 
-try to solve it numerically, with finite difference, forward difference in time and central difference in space. we have:
+try to solve it numerically, with finite difference, Euler forward difference in time and central difference in space. we have:
 $$
 \frac{u^{n+1}_i-u^n_i}{\Delta t} + a \frac{u^n_{i+1}-u^n_{i-1}}{2\Delta x} = 0
 $$
 
 $$
-u^{n+1}_i = u^n_i - \frac{a\Delta t}{\Delta x}\left(\frac{u^n_{i+1}-u^n_{i-1}}{2} \right) = 0
+u^{n+1}_i = u^n_i - \frac{a\Delta t}{\Delta x}\left(\frac{u^n_{i+1}-u^n_{i-1}}{2} \right)
 $$
 
 It is consistency, and the Von Neumann analysis shows it is stable if the CFL condition (Courant number $a\frac{\Delta t}{\Delta x}<1$) is satisfied. It should converge to the exact solution.
 
 ##### Numerical practice
 
+Consider a convection equation
+$$
+\frac{\partial u}{\partial t} + \frac{\partial u}{\partial x} = 0
+$$
+with a Riemann initial condition
+$$
+u(x, 0)= \begin{cases} 1.2 &x \leq 0 \\ 0.4 & x>0\end{cases}
+$$
+The <font color=#75147c>Euler in time,  central difference  in space</font> scheme is applied on fortran script ([base.f90](https://github.com/DaydreamAtNight/Numerical-schemes-for-discontinuities/blob/master/1_linear_convection_eq/base.f90), all the scripts in this post are annotated and modified from my graduate CFD course material). And the result is shown here:
 
+<img src="base_advection.png" alt="Euler forward in time, central in space FDM for Riemann problem" style="zoom:67%;" />
 
+And the solver crashed, which means the scheme is unstable. And with finer mesh and smaller time step (controlled by Courant number), the scheme still does not converge to the exact solution.
 
+#### Lax-Friedrich's scheme
+
+Lax-Friedrich replaces the term $u^n_i$ by the average $u^n_i = \frac{1}{2}(u^n_{i+1}+u^n_{i-1})$, 
+$$
+u^{n+1}_i = \underbrace{\frac{u^n_{i+1}+u^n_{i-1}}{2}}_{\text{only change}} - \frac{a\Delta t}{\Delta x}\left(\frac{u^n_{i+1}-u^n_{i-1}}{2} \right)
+$$
+
+##### Numerical practice
+
+Based on the same equation and initial condition, with same time & space intervals, iteration times, Courant numbers, the <font color=#75147c>Lax-Friedrich's scheme in time, central difference in space</font>  is applied ([Lax-Friedrichs_scheme.f90](https://github.com/DaydreamAtNight/Numerical-schemes-for-discontinuities/blob/master/1_linear_convection_eq/Lax-Friedrichs_scheme.f90)). And the result is shown here:
+
+<img src="Lax-Friedrichs_scheme.png" alt="Lax-Friedrichs_scheme" style="zoom:67%;" />
+
+This scheme is a little better
+
+- there are oscillations yet with smaller $\Delta x$ and $\Delta t$, the oscillations are smoothed out. 
+- the solution does not converge to the exact.
+  - This scheme is highly diffusive and the discontinuity is more smoothed out with higher resolution. 
+  - The location of the shock is not captured.
+
+#### 1<sup>st</sup> order Upwind method
+
+Keep the Euler forward time difference, give up the order of the spatial central difference scheme to have a first order backward/forward scheme as:
+$$
+\frac{\partial u}{\partial x}= 
+\begin{cases}  
+\frac{u^n_{i}-u^n_{i-1}}{\Delta x} &a \geq 0 \\ 
+\frac{u^n_{i+1}-u^n_{i}}{\Delta x} & a<0
+\end{cases}
+$$
+as a result:
+$$
+u^{n+1}_i = 
+\begin{cases}  
+u^n_i - \frac{a\Delta t}{\Delta x}\left(u^n_{i}-u^n_{i-1} \right)
+&a \geq 0 \\ 
+u^n_i - \frac{a\Delta t}{\Delta x}\left(u^n_{i+1}-u^n_{i} \right)
+& a<0
+\end{cases}
+$$
+{% note info %}
+
+The idea is that because the downstream of the shock will not feel the upstream, so this upwind scheme may be able to capture this kind of discontinuity.
+
+{% endnote %}
+
+##### Numerical practice
+
+Similarly, <font color=#75147c>Euler in time, First Order Upwind in space</font> is applied on the same problem ([first_order_upwind.f90](https://github.com/DaydreamAtNight/Numerical-schemes-for-discontinuities/blob/master/1_linear_convection_eq/first_order_upwind.f90). And the result is shown below:
+
+<img src="first_order_upwind.png" alt="first order upwind scheme" style="zoom:67%;" />
+
+This scheme is the best so far,
+
+- there is no oscillation because it is first order
+- the solution converge to the exact
+  - This scheme is slightly diffusive and the discontinuity is better captured with higher resolution.
+  - The location of the shock is well captured.
+
+{% note secondary %}
+
+Just for fun, we can apply the Lax-Friedrich in time and first order upwind in space,  we still have the oscillations. It is explainable, maybe because the Lax-Friedrich's scheme breaks the intent of the linear upwind scheme to isolate upwind information.
+
+<img src="Lax-Friedrich_linear_upwind.png" alt="Lax-Friedrich in time and first order upwind in space result" style="zoom:67%;" />
+
+{% endnote %}
+
+#### Lax-Wendroff scheme
+
+It is one of the most well known second order schemes, based on the Taylor's theorem for $u^{n+1}_i$:
+$$
+u_{i}^{n+1} \approx u_{i}^{n}+\left.\Delta t \frac{\partial u}{\partial t}\right|_{i} ^{n}+\left.\frac{\Delta t^{2}}{2} \frac{\partial^{2} u}{\partial t^{2}}\right|_{i} ^{n}+\ldots
+$$
+with $\frac{\partial u}{\partial t} = -a\frac{\partial u}{\partial x}$ and $\frac{\partial u}{\partial t} = a^2\frac{\partial^2 u}{\partial x^2}$, plus the Euler scheme, we have:
+$$
+u^{n+1}_i = u^n_i - \frac{a\Delta t}{\Delta x}\left(\frac{u^n_{i+1}-u^n_{i}}{2} \right) + \frac{a^2\Delta t^2}{\Delta x^2}\left(\frac{u^n_{i+1}-2u^n_{i}+u^n_{i-1}}{2} \right)
+$$
+{% note info %}
+
+We know the original central space scheme creates the oscillations, and Lax-Wendroff decides to add an another <font color=#75147c>second order derivative term</font>. According to the NS equation, the second derivative acts like a viscous term, bringing the diffusion, so it might be able to stabilise the scheme.
+
+This scheme is <font color=#75147c>not consistent</font>, because of this additional second order term.
+
+{% endnote %}
+
+##### Numerical practice
+
+<font color=#75147c>Euler in time, Lax-Wendroff scheme in space</font> is applied on the same problem ([Lax-Wendroff.f90](https://github.com/DaydreamAtNight/Numerical-schemes-for-discontinuities/blob/master/1_linear_convection_eq/Lax-Wendroff.f90)). And the result is shown below:
+
+<img src="Lax-Wendroff.png" alt="Euler in time, Lax-Wendroff scheme in space solution" style="zoom:67%;" />
+
+This scheme,
+
+- the oscillation area on the top grows with the resolution
+- the solution converge to the exact
+  - The discontinuity is better captured with higher resolution.
+  - The location of the shock is well captured.
+
+{% note secondary %}
+
+The oscillated behaviour exist may be because the contribution of the stabiliser is too small. Try adding a coefficient to the second-order term, we have:
+$$
+u^{n+1}_i = u^n_i - \frac{a\Delta t}{\Delta x}\left(\frac{u^n_{i+1}-u^n_{i}}{2} \right) + \phi \frac{a^2\Delta t^2}{\Delta x^2}\left(\frac{u^n_{i+1}-2u^n_{i}+u^n_{i-1}}{2} \right)
+$$
+With code: [Lax-Wendroff_coefficient.f90](https://github.com/DaydreamAtNight/Numerical-schemes-for-discontinuities/blob/master/1_linear_convection_eq/Lax-Wendroff_coefficient.f90), 
+
+<img src="Lax-Wendroff_coefficient.png" alt="Lax Wendroff coefficient search" style="zoom:67%;" />
+
+It can be seen that increasing the value of $\phi$ brings more diffusion to the equation, and oppositely, increasing the number of nodes brings more oscillation to the system. 
+
+The appropriate value of $\phi$ may be proportional to the mesh resolution. And actually it is also a function of the initial equation (the speed gap across the shock).
+
+{% endnote %}
+
+{% note info %}
+
+In conclusion, 
+
+- First order scheme is <font color=#75147c>diffusive</font>
+- Second order scheme is <font color=#75147c>dispensive</font>
+- First order solution is <font color=#75147c>smooth / not accurate / stable</font> (it is impossible for first order scheme to oscillate, it is the most used scheme in the industry when dealing with discontinuities)
+- Second order solution is <font color=#75147c>more accurate / oscillation</font> (there is always more oscillations with more accurate solutions, more points, more values of the differences)
+
+The goal is to balance the accuracy with oscillation.
+
+Cancellation of oscillations is an active field of research
+
+{% endnote %}
+
+### Schemes on non-linear Burger equation
+
+After linear PDE, we consider a <font color=#75147c>1D non-linear</font> case, burger equation, with two forms,
+
+- primitive form:
+  $$
+  \frac{\partial u}{\partial t} + u\frac{\partial u}{\partial x} = 0
+  $$
+
+- conservative form:
+  $$
+  \begin{aligned}
+  \frac{\partial u}{\partial t} + \frac{\partial f(u)}{\partial x} = 0, \\
+  \text{with }f(u)=\frac{1}{2}u^2
+  \end{aligned}
+  $$
+
+#### 1<sup>st</sup> order upwind scheme
+
+We consider forward difference (Euler) in time and 1<sup>st</sup> order upwind (backward in this case) in space, we have
+
+- primitive form:
+  $$
+  \begin{aligned}
+  \frac{\partial u}{\partial t} = \frac{u^{n+1}_{i}-u^{n}_{i}}{\Delta t} \\
+  \frac{\partial u}{\partial x} = \frac{u^{n+1}_{i}-u^{n}_{i}}{\Delta x}
+  \end{aligned}
+  $$
+  As a result:
+  $$
+  u^{n+1}_{i}= u^{n}_{i}-u^{n}_{i}\frac{\Delta t}{\Delta x}\left(u^{n+1}_{i}-u^{n}_{i}\right)
+  $$
+
+- conservative form:
+  $$
+  \begin{aligned}
+  \frac{\partial u}{\partial t} = \frac{u^{n+1}_{i}-u^{n}_{i}}{\Delta t} \\
+  \frac{\partial f(u)}{\partial x} = \frac{(u^{n+1}_{i})^2-(u^{n}_{i})^2}{2\Delta x}
+  \end{aligned}
+  $$
+  
+  As a result:
+  $$
+  u^{n+1}_{i}= u^{n}_{i}-\frac{\Delta t}{2\Delta x}\left((u^{n+1}_{i})^2-(u^{n}_{i})^2\right)
+  $$
+
+##### Numerical practice
+
+Consider a burger equation
+$$
+\frac{\partial u}{\partial t} + u\frac{\partial u}{\partial x} = 0
+$$
+with a Riemann initial condition
+$$
+u(x, 0)= \begin{cases} 1.2 &x \leq 0 \\ 0.4 & x>0\end{cases}
+$$
+<font color=#75147c>Euler in time, first order upwind (backward in this case)scheme in space</font> is applied on the same Riemann problem(). Set `endtime` as 2.5 to maintain the same shock position as before. And the result is shown below:
+
+<img src="burger_first_order_upwind.png" alt="base_burger" style="zoom:67%;" />
+
+As we can see:
+
+- the non-conservative form failed to locate the shock position properly.
+- Increase the resolution, the conservative form converges nicely.
+
+{% note info %}
+
+Conservative form performs better than the non-conservative, but the non-conservative form is alway easy to implement when dealing with the Euler equation. There is never a win-win situation.
+
+{% endnote %}
+
+#### Conservative Form Schemes
+
+Now we know the conservative form is better, and here is a way of writing the scheme in the conservative form. First we need to go back the integral form with the finite volume methods.
+
+##### Finite-Volume Methods
+
+<img src="FVM cells illustration.png" alt="FVM cells illustration" style="zoom:40%;" />
+
+With the mesh above, we have the equation below, the change of cell values is only determined by the edge values.
+$$
+\int_{x_{i-1 / 2}}^{x_{i+1 / 2}}\left[u\left(x, t^{n+1}\right)-u\left(x, t^{n}\right)\right] d x=-\int_{t^{n}}^{t^{n+1}}\left[f\left(u\left(x_{i+1 / 2}, t\right)-f\left(u\left(x_{i-1 / 2}, t\right)\right)\right] d t\right.
+$$
+Then define the cell-averaged $\bar{u}_{i}^{n}$ and $\bar{u}_{i}^{n+1}$ at time $t^{n}$ and $t^{n+1}$ :
+$$
+\bar{u}_{i}^{n}=\frac{1}{\Delta x} \int_{x_{i-1 / 2}}^{x_{i+1 / 2}} u\left(x, t^{n}\right) d x \quad \bar{u}_{i}^{n+1}=\frac{1}{\Delta x} \int_{x_{i-1 / 2}}^{x_{i+1 / 2}} u\left(x, t^{n+1}\right) d x
+$$
+plus the time averaged flux $f_{i-1 / 2}$ and $f_{i+1 / 2}$ as
+$$
+f_{i-1 / 2}=\frac{1}{\Delta t} \int_{t^{n}}^{t^{n+1}} f\left(u\left(x_{i-1 / 2}, t\right)\right) d t \quad f_{i+1 / 2}=\frac{1}{\Delta t} \int_{t^{n}}^{t^{n+1}} f\left(u\left(x_{i+1 / 2}, t\right)\right) d t
+$$
+We get the general form for a conservative numerical scheme:
+$$
+\bar{u}_{i}^{n+1}=\bar{u}_{i}^{n}-\frac{\Delta t}{\Delta x} \left(f_{i+1 / 2}-f_{i-1 / 2}\right)
+$$
+We need consistency check as:
+
+- for numerical flux $f_{i+1 / 2}$:  $f\left(\ldots, \bar{u}_{i-1}, \bar{u}_{i}, \bar{u}_{i+1}, \ldots\right)=f(u)$
+
+- for the conservative scheme: the velocity can only change due to the fluxes:
+
+  we can easily have:
+  $$
+  (\bar{u}_{i-1}^{n+1}+\bar{u}_{i}^{n+1}+\bar{u}_{i+1}^{n+1})=(\bar{u}_{i}^{n-1}+\bar{u}_{i}^{n}+\bar{u}_{i}^{n+1})-\frac{\Delta t}{\Delta x} \left(f_{i+3 / 2}-f_{i-3 / 2}\right)
+  $$
+  passed.
+
+##### Conservative Finite-Difference Methods
+
+Inspired by the FVM methods, we have the general form of a conservative FDM method:
+$$
+\color{purple}
+\bar{u}_{i}^{n+1}=\bar{u}_{i}^{n}-\frac{\Delta t}{\Delta x} \left(F^{n}_{i+1 / 2}-F^{n}_{i-1 / 2}\right)
+$$
+We can try to write the conservative version of most of the FDM methods, (but not all):
+
+- Upwind method:
+  $$
+  F^{n}_{i+1 / 2} = \frac{1}{2}(u^{n}_{i})^2
+  $$
+
+- Lax-Friedrich's scheme:
+  $$
+  F^{n}_{i+1 / 2} = \frac{\Delta x}{2\Delta t}(u^{n}_{i}-u^{n}_{i+1})+\frac{1}{2}\left[F(u^{n}_{i+1})+F(u^{n}_{i-1})\right]
+  $$
+
+{% note info %}
+
+Some facts about conservative methods:
+
+- Conservative methods automatically locate the shocks correctly (only the location, not the shape)
+- Conservative methods may show large spurious oscillation and smoothing near shocks
+- If not strictly conservative, then incorrect shock speeds. One way to deal with is manually impose the Rankine-Hugoniot jump condition, with awareness of shock locations.
+
+Two main strategies for discontinuities,
+
+- shock capturing (99%)
+
+  Use a numerical scheme, in general conservative and with some added mechanism, to ensure that an entropy solution is obtained. (what we will discuss next)
+
+- shock fitting
+
+  Shocks (and other discontinuities) are treated as internal boundaries and the jump conditions are imposed as compatibility conditions across them.
+
+{% endnote %}
+
+{% note secondary %}
+
+Moreover, here is a methods which is not very influential:
+
+##### Lax-Wendroff Theorem
+
+If a consistent (numerical flux consistent with physical flux), conservative scheme for the numerical solution of a hyperbolic conservation law converges (as $\Delta x \rightarrow 0$ and $\Delta t\rightarrow 0$), it converges to a weak solution.
+
+- It's only a weak solution, not guarantee if it is physically acceptable
+- not guarantee it actually does converge
+
+{% endnote %}
+
+### Scheme on reverse Riemann problem
+
+So far our schemes only meet the Riemann problems with $u_L>u_R$, for the reverse problem, we consider the Burger equation with initial condition:
+$$
+u(x,0)= 
+\begin{cases}  
+-1 &x<0 \\ 
+1 & x>0
+\end{cases}
+$$
+We have two mathematical solutions as:
+
+<img src="./two solutions for reverse Riemann problem.png" alt="two solutions for reverse Riemann problem, rarefaction wave (left) and stationary discontinuity (right)" style="zoom:67%;" />
+
+#### Numerical schemes 
+
+we set 2 different initial conditions:
+
+- $$
+  u_i^0= 
+  \begin{cases}  
+  -1 &i\leq0 \\ 
+  1 & i>0
+  \end{cases}
+  $$
+
+- 
+
+- $$
+  u_i^0= 
+  \begin{cases}  
+  -1 &i<0 \\ 
+  0 &i=0 \\ 
+  1 & i>0
+  \end{cases}
+  $$
+
+And use the first order upwind scheme as
+$$
+\frac{\partial u}{\partial t}=\frac{u_i^{n+1}-u_i^{n}}{\Delta t}, \qquad 
+\frac{\partial (1/2u^2)}{\partial x}= 
+\begin{cases}  
+\frac{(u_{i}^{n})^2-(u_{i-1}^{n})^2}{2\Delta x} &u_i^n\geq0 \\ 
+\frac{(u_{i+1}^{n})^2-(u_i^{n})^2}{2\Delta x} & u_i^n<0
+\end{cases}
+$$
+
+#### Numerical Practice
+
+Solving the  system with [reverse_burger_first_order_upwind.f90](https://github.com/DaydreamAtNight/Numerical-schemes-for-discontinuities/blob/master/2_non_linear_burger_eq/reverse_burger_first_order_upwind.f90), we have the result:
+
+<img src="reverse_burger_first_order_upwind.png" alt="reverse_burger_first_order_upwind" style="zoom:67%;" />
+
+As we can see a single change of the initial condition results in different solutions. 
+
+- conservative methods can converge to non-physical solutions rather than to the physically correct rarefaction wave.
+- the solution is very sensitive to initial data.
+
+{% note danger %}
+
+Actually it is also very sensitive the node number, and the CFL number, we change the nodes number to 100, keep the initial condition that converges to the entropy satisfying solution, we have another weak solution.
+
+<img src="reverse_burger_first_order_upwind_compare.png" alt="reverse burger first order upwind comparison" style="zoom:67%;" />
+
+Different node number i.e. mesh resolution result in different weak solutions. Two main findings:
+
+- The code crashed at some node numbers. 
+- Two types of solutions are found, either almost align with the smooth former result, or presents a bumpy at the centre. 
+- The relationship between the node number and the type of the solutions possesses a bifurcation behaviours. 
+
+I can't explain... Maybe still because the initial condition slightly changes with different resolutions. Need more work on searching more nodes numbers, and more initial condition settings.
+
+{% endnote %}
 
 ## Systems of conservation laws
 
 {% note info %}
 
-Jacobian matrices, linearized equations, conservative and characteristic variables.
+Jacobian matrices, linearised equations, conservative and characteristic variables.
 Rankine-Hugoniot jump conditions. Boundary conditions.
 
 {% endnote%}
